@@ -7,7 +7,7 @@ def seed_bookings():
       userId=4,
       spotId=1,
       startDate='2022-06-26',
-      endDate='2022-06-31',
+      endDate='2022-06-30',
       price=1500,
     )
     booking2 = Booking(
