@@ -8,7 +8,7 @@ class Spot(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     ownerId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     name = db.Column(db.String(150), nullable=False)
-    address = db.Column(db.String(250), nullable=False)
+    address = db.Column(db.String(250))
     city = db.Column(db.String(100), nullable=False)
     state = db.Column(db.String(100))
     country = db.Column(db.String(100), nullable=False)

@@ -35,7 +35,7 @@ def seed_reviews():
     )
     review6 = Review(
       userId=4,
-      spotId=3,
+      spotId=2,
       review='My mind was blown when we arrived on the property. It was truly a dream vacation.',
       rating=5,
     )
