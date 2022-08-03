@@ -14,7 +14,7 @@ def seed_spots():
     )
     spot2 = Spot(
       ownerId=2,
-      name='',
+      name='The King of Bel Air',
       address='924 Bel Air Rd',
       city='Los Angeles',
       state='California',

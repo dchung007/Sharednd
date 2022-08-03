@@ -13,3 +13,14 @@ class Review(db.Model):
     createdAt = db.Column(DateTime(timezone=True), server_default=func.now())
 
     review_owner = db.relationship("User", back_populates="user_reviews")
+    review_spot = db.relationship("Spot", back_populates="spot_reviews")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'userId': self.userId,
+            'spotId': self.spotId,
+            'review': self.review,
+            'rating': self.rating,
+            'createdAt': self.createdAt
+        }
