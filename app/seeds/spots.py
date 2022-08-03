@@ -32,76 +32,76 @@ def seed_spots():
       price=9565,
       description='Picturesque version of Greece- the beautiful beaches, amazing home filled with aesthetic architecture. A huge pool and crystal clear waters.'
     )
-    spot4 = Spot(
-      ownerId=4,
-      name='',
-      address='',
-      city='',
-      state='',
-      country='',
-      price=1000,
-      description=''
-    )
-    spot5 = Spot(
-      ownerId=5,
-      name='',
-      address='',
-      city='',
-      state='',
-      country='',
-      price=1000,
-      description=''
-    )
-    spot6 = Spot(
-      ownerId=6,
-      name='',
-      address='',
-      city='',
-      state='',
-      country='',
-      price=1000,
-      description=''
-    )
-    spot7 = Spot(
-      ownerId=1,
-      name='',
-      address='',
-      city='',
-      state='',
-      country='',
-      price=1000,
-      description=''
-    )
-    spot8 = Spot(
-      ownerId=2,
-      name='',
-      address='',
-      city='',
-      state='',
-      country='',
-      price=1000,
-      description=''
-    )
-    spot9 = Spot(
-      ownerId=3,
-      name='',
-      address='',
-      city='',
-      state='',
-      country='',
-      price=1000,
-      description=''
-    )
-    spot10 = Spot(
-      ownerId=4,
-      name='',
-      address='',
-      city='',
-      state='',
-      country='',
-      price=1000,
-      description=''
-    )
+    # spot4 = Spot(
+    #   ownerId=4,
+    #   name='',
+    #   address='',
+    #   city='',
+    #   state='',
+    #   country='',
+    #   price=1000,
+    #   description=''
+    # )
+    # spot5 = Spot(
+    #   ownerId=5,
+    #   name='',
+    #   address='',
+    #   city='',
+    #   state='',
+    #   country='',
+    #   price=1000,
+    #   description=''
+    # )
+    # spot6 = Spot(
+    #   ownerId=6,
+    #   name='',
+    #   address='',
+    #   city='',
+    #   state='',
+    #   country='',
+    #   price=1000,
+    #   description=''
+    # )
+    # spot7 = Spot(
+    #   ownerId=1,
+    #   name='',
+    #   address='',
+    #   city='',
+    #   state='',
+    #   country='',
+    #   price=1000,
+    #   description=''
+    # )
+    # spot8 = Spot(
+    #   ownerId=2,
+    #   name='',
+    #   address='',
+    #   city='',
+    #   state='',
+    #   country='',
+    #   price=1000,
+    #   description=''
+    # )
+    # spot9 = Spot(
+    #   ownerId=3,
+    #   name='',
+    #   address='',
+    #   city='',
+    #   state='',
+    #   country='',
+    #   price=1000,
+    #   description=''
+    # )
+    # spot10 = Spot(
+    #   ownerId=4,
+    #   name='',
+    #   address='',
+    #   city='',
+    #   state='',
+    #   country='',
+    #   price=1000,
+    #   description=''
+    # )
     # spot11 = Spot(
     #   ownerId=4,
     #   name='',

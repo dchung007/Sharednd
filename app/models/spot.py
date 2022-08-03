@@ -10,7 +10,7 @@ class Spot(db.Model):
     name = db.Column(db.String(150), nullable=False)
     address = db.Column(db.String(250), nullable=False)
     city = db.Column(db.String(100), nullable=False)
-    state = db.Column(db.String(100), nullable=False)
+    state = db.Column(db.String(100))
     country = db.Column(db.String(100), nullable=False)
     price = db.Column(db.Integer, nullable=False)
     description = db.Column(db.String(250), nullable=False)
