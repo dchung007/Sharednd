@@ -5,63 +5,63 @@ def seed_images():
 
     image1 = Image(
       spotId=1,
-      imageUrl=''
+      imageUrl='https://a0.muscache.com/im/pictures/7cc3c855-f90e-4d0f-9b13-3b5c2a3c4bad.jpg'
     )
     image2 = Image(
       spotId=1,
-      imageUrl=''
+      imageUrl='https://a0.muscache.com/im/pictures/33896007/b6c909be_original.jpg'
     )
     image3 = Image(
       spotId=1,
-      imageUrl=''
+      imageUrl='https://a0.muscache.com/im/pictures/9833de62-35b7-41f2-8a24-0d9354150ea7.jpg'
     )
     image4 = Image(
       spotId=1,
-      imageUrl=''
+      imageUrl='https://a0.muscache.com/im/pictures/be7e3e46-2243-4ad6-a9f2-7ef41b270147.jpg'
     )
     image5 = Image(
       spotId=1,
-      imageUrl=''
+      imageUrl='https://a0.muscache.com/im/pictures/d89b7a3c-d17e-453d-87b0-56a52e735d62.jpg'
     )
     image6 = Image(
       spotId=2,
-      imageUrl=''
+      imageUrl='https://www.hiltonhyland.com/wp-content/uploads/2019/listings-new/listing-601.jpg'
     )
     image7 = Image(
       spotId=2,
-      imageUrl=''
+      imageUrl='https://www.hiltonhyland.com/wp-content/uploads/2019/10/924BelAirdRd2019_8.jpgimage7'
     )
     image8 = Image(
       spotId=2,
-      imageUrl=''
+      imageUrl='https://www.hiltonhyland.com/wp-content/uploads/2019/10/924BelAirdRd2019_1-1024x640.jpg'
     )
     image9 = Image(
       spotId=2,
-      imageUrl=''
+      imageUrl='https://www.hiltonhyland.com/wp-content/uploads/2019/listings-new/listing-601-11-1024x640.jpg'
     )
     image10 = Image(
       spotId=2,
-      imageUrl=''
+      imageUrl='https://www.hiltonhyland.com/wp-content/uploads/2019/10/924BelAirdRd2019_5.jpg'
     )
     image11 = Image(
       spotId=3,
-      imageUrl=''
+      imageUrl='https://cdn.luxatic.com/wp-content/uploads/2017/07/Jewel-of-the-Aegean-Sea-2.jpg'
     )
     image12 = Image(
       spotId=3,
-      imageUrl=''
+      imageUrl='hhttps://cdn.luxatic.com/wp-content/uploads/2017/07/Jewel-of-the-Aegean-Sea-10.jpg'
     )
     image13 = Image(
       spotId=3,
-      imageUrl=''
+      imageUrl='https://cdn.luxatic.com/wp-content/uploads/2017/07/Jewel-of-the-Aegean-Sea-18.jpg'
     )
     image14 = Image(
       spotId=3,
-      imageUrl=''
+      imageUrl='https://cdn.luxatic.com/wp-content/uploads/2017/07/Jewel-of-the-Aegean-Sea-7.jpg'
     )
     image15 = Image(
       spotId=3,
-      imageUrl=''
+      imageUrl='https://cdn.luxatic.com/wp-content/uploads/2017/07/Jewel-of-the-Aegean-Sea-21.jpg'
     )
     image16 = Image(
       spotId=4,

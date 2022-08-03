@@ -4,33 +4,33 @@ from app.models import db, Spot
 def seed_spots():
     spot1 = Spot(
       ownerId=1,
-      name='',
-      address='',
-      city='',
-      state='',
-      country='',
-      price=1000,
-      description=''
+      name='Balian Treehouse with beautiful pool',
+      address='384 Balian Way',
+      city='Balian Beach',
+      state='Bali',
+      country='Indonesia',
+      price=125,
+      description='A tropical paradise that will immerse you in the beautiful forests of Bali, with the Balian beach only a few steps away.'
     )
     spot2 = Spot(
       ownerId=2,
       name='',
-      address='',
-      city='',
-      state='',
-      country='',
-      price=1000,
-      description=''
+      address='924 Bel Air Rd',
+      city='Los Angeles',
+      state='California',
+      country='USA',
+      price=78912,
+      description='An absolute unit of a house, it has got everything you can think of. You will never be bored here!'
     )
     spot3 = Spot(
       ownerId=3,
-      name='',
-      address='',
-      city='',
+      name='The Jewel of the Aegean Sea',
+      address='846 Kalafati Street',
+      city='Kalafati',
       state='',
-      country='',
-      price=1000,
-      description=''
+      country='Greece',
+      price=9565,
+      description='Picturesque version of Greece- the beautiful beaches, amazing home filled with aesthetic architecture. A huge pool and crystal clear waters.'
     )
     spot4 = Spot(
       ownerId=4,
