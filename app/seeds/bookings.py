@@ -8,7 +8,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=74265,
       description=''
     )
     booking2 = Booking(
@@ -16,7 +16,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=13849,
       description=''
     )
     booking3 = Booking(
@@ -24,7 +24,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=48935,
       description=''
     )
     booking4 = Booking(
@@ -32,7 +32,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=34658,
       description=''
     )
     booking5 = Booking(
@@ -40,7 +40,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=24843,
       description=''
     )
     booking6 = Booking(
@@ -48,7 +48,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=34785,
       description=''
     )
     booking7 = Booking(
@@ -56,7 +56,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=84978,
       description=''
     )
     booking8 = Booking(
@@ -64,7 +64,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=98743,
       description=''
     )
     booking9 = Booking(
@@ -72,7 +72,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=59287,
       description=''
     )
     booking10 = Booking(
@@ -80,7 +80,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=67854,
       description=''
     )
     booking11 = Booking(
@@ -88,7 +88,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=73462,
       description=''
     )
     booking12 = Booking(
@@ -96,7 +96,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=87495,
       description=''
     )
     booking13 = Booking(
@@ -104,7 +104,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=72346,
       description=''
     )
     booking14 = Booking(
@@ -112,7 +112,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=93744,
       description=''
     )
     booking15 = Booking(
@@ -120,7 +120,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=73643,
       description=''
     )
     booking16 = Booking(
@@ -128,7 +128,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=34896,
       description=''
     )
     booking17 = Booking(
@@ -136,7 +136,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=4832,
       description=''
     )
     booking18 = Booking(
@@ -144,7 +144,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=34833,
       description=''
     )
     booking19 = Booking(
@@ -152,7 +152,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=12233,
       description=''
     )
     booking20 = Booking(
@@ -160,7 +160,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=92733,
       description=''
     )
     booking21 = Booking(
@@ -168,7 +168,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=23322,
       description=''
     )
     booking22 = Booking(
@@ -176,7 +176,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=12234,
       description=''
     )
     booking23 = Booking(
@@ -184,7 +184,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=45321,
       description=''
     )
     booking24 = Booking(
@@ -192,7 +192,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=42312,
       description=''
     )
     booking25 = Booking(
@@ -200,7 +200,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=38796,
       description=''
     )
     booking26 = Booking(
@@ -208,7 +208,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=44653,
       description=''
     )
     booking27 = Booking(
@@ -216,7 +216,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=39876,
       description=''
     )
     booking28 = Booking(
@@ -224,7 +224,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=26353,
       description=''
     )
     booking29 = Booking(
@@ -232,7 +232,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=23233,
       description=''
     )
     booking30 = Booking(
@@ -240,7 +240,7 @@ def seed_bookings():
       spotId=1,
       startDate='',
       endDate='',
-      price=1000,
+      price=97233,
       description=''
     )
 

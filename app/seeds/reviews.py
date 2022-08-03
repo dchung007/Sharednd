@@ -6,62 +6,62 @@ def seed_reviews():
     review1 = Review(
       userId=1,
       spotId=1,
-      review='',
-      rating=1,
+      review='So beautiful! The hosts were so kind and the pool was amazing. The nature around us was breathtaking!',
+      rating=5,
     )
     review2 = Review(
-      userId=1,
+      userId=2,
       spotId=1,
-      review='',
-      rating=2,
+      review='Not one to really come back, but this place was really THAT memorable!',
+      rating=5,
     )
     review3 = Review(
-      userId=1,
+      userId=4,
       spotId=1,
-      review='',
+      review='The nature was great, but the actual house itself was not actually that great.',
       rating=3,
     )
     review4 = Review(
-      userId=1,
+      userId=6,
       spotId=1,
-      review='',
-      rating=4,
+      review='So many mosquitoes! I did not enjoy this stay at all!',
+      rating=1,
     )
     review5 = Review(
-      userId=1,
+      userId=5,
       spotId=1,
-      review='',
-      rating=5,
+      review='The pool was so refreshing, and walking through the trees and relaxing was well worth it.',
+      rating=4,
     )
     review6 = Review(
-      userId=1,
-      spotId=1,
-      review='',
-      rating=1,
+      userId=3,
+      spotId=2,
+      review='My mind was blown when we arrived on the property. It was truly a dream vacation.',
+      rating=5,
     )
     review7 = Review(
       userId=1,
-      spotId=1,
-      review='',
-      rating=1,
+      spotId=2,
+      review='Absolutely incredible. Would come here again if I could afford it, haha!',
+      rating=5,
     )
     review8 = Review(
-      userId=1,
-      spotId=1,
-      review='',
-      rating=1,
+      userId=5,
+      spotId=2,
+      review='A once in a lifetime vacation home, there was so much to do and not enough time to do it.',
+      rating=5,
     )
     review9 = Review(
-      userId=1,
-      spotId=1,
-      review='',
-      rating=1,
+      userId=2,
+      spotId=2,
+      review='I mean the pictures do not do the place justice. The hosts were AMAZING and let us use every part of the house. It was SO MUCH fun!',
+      rating=5,
     )
     review10 = Review(
-      userId=1,
-      spotId=1,
-      review='',
-      rating=1,
+      userId=4,
+      spotId=2,
+      review='The place was so big and peaceful. It was so nice to just lay by the pool and soak in the good views.',
+      rating=5,
     )
     review11 = Review(
       userId=1,
@@ -184,6 +184,127 @@ def seed_reviews():
       review='',
       rating=1,
     )
+    review31 = Review(
+      userId=1,
+      spotId=1,
+      review='',
+      rating=1,
+    )
+    review32 = Review(
+      userId=1,
+      spotId=1,
+      review='',
+      rating=1,
+    )
+    review33 = Review(
+      userId=1,
+      spotId=1,
+      review='',
+      rating=1,
+    )
+    review34 = Review(
+      userId=1,
+      spotId=1,
+      review='',
+      rating=1,
+    )
+    review35 = Review(
+      userId=1,
+      spotId=1,
+      review='',
+      rating=1,
+    )
+    review36 = Review(
+      userId=1,
+      spotId=1,
+      review='',
+      rating=1,
+    )
+    review37 = Review(
+      userId=1,
+      spotId=1,
+      review='',
+      rating=1,
+    )
+    review38 = Review(
+      userId=1,
+      spotId=1,
+      review='',
+      rating=1,
+    )
+    review39 = Review(
+      userId=1,
+      spotId=1,
+      review='',
+      rating=1,
+    )
+    review40 = Review(
+      userId=1,
+      spotId=1,
+      review='',
+      rating=1,
+    )
+    review41 = Review(
+      userId=1,
+      spotId=1,
+      review='',
+      rating=1,
+    )
+    review42 = Review(
+      userId=1,
+      spotId=1,
+      review='',
+      rating=1,
+    )
+    review43 = Review(
+      userId=1,
+      spotId=1,
+      review='',
+      rating=1,
+    )
+    review44 = Review(
+      userId=1,
+      spotId=1,
+      review='',
+      rating=1,
+    )
+    review45 = Review(
+      userId=1,
+      spotId=1,
+      review='',
+      rating=1,
+    )
+    review46 = Review(
+      userId=1,
+      spotId=1,
+      review='',
+      rating=1,
+    )
+    review47 = Review(
+      userId=1,
+      spotId=1,
+      review='',
+      rating=1,
+    )
+    review48 = Review(
+      userId=1,
+      spotId=1,
+      review='',
+      rating=1,
+    )
+    review49 = Review(
+      userId=1,
+      spotId=1,
+      review='',
+      rating=1,
+    )
+    review50 = Review(
+      userId=1,
+      spotId=1,
+      review='',
+      rating=1,
+    )
+
 
 
 
@@ -217,6 +338,26 @@ def seed_reviews():
     db.session.add(review28)
     db.session.add(review29)
     db.session.add(review30)
+    db.session.add(review31)
+    db.session.add(review32)
+    db.session.add(review33)
+    db.session.add(review34)
+    db.session.add(review35)
+    db.session.add(review36)
+    db.session.add(review37)
+    db.session.add(review38)
+    db.session.add(review39)
+    db.session.add(review40)
+    db.session.add(review41)
+    db.session.add(review42)
+    db.session.add(review43)
+    db.session.add(review44)
+    db.session.add(review45)
+    db.session.add(review46)
+    db.session.add(review47)
+    db.session.add(review48)
+    db.session.add(review49)
+    db.session.add(review50)
 
     db.session.commit()
 
