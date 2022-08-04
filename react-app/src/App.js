@@ -9,6 +9,8 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
 import SpotsList from './components/SpotsList';
+import CreateSpot from './components/CreateSpot';
+import CreateImage from './components/CreateImage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -40,6 +42,12 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
+        </ProtectedRoute>
+        <ProtectedRoute path='/spots/new' exact={true}>
+          <CreateSpot />
+        </ProtectedRoute>
+        <ProtectedRoute path='/spots/:spotId/images/new' exact={true}>
+          <CreateImage />
         </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
           <SpotsList />

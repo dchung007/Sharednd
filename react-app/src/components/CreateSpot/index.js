@@ -1,9 +1,12 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addSpot } from "../../store/spots";
+import {useHistory} from "react-router-dom";
 
 
 const CreateSpot = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
@@ -11,9 +14,25 @@ const CreateSpot = () => {
   const [country, setCountry] = useState('');
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState('');
+  const sessionUser = useSelector(state=> state.session.user)
 
   const handleSubmit = async (e) => {
+    e.preventDefault()
 
+    const newSpot = {
+      name,
+      address,
+      city,
+      state,
+      country,
+      price,
+      description
+    }
+
+    let createdSpot = await dispatch(addSpot(newSpot))
+    if (createdSpot) {
+      history.push(`/spots/${createdSpot.id}/images/new`)
+    }
   }
 
 
@@ -27,70 +46,85 @@ const CreateSpot = () => {
           <input
             id="name"
             name="name"
+            type="text"
             onChange={e => setName(e.target.value)}
-          ></input>
+          />
         </div>
         <div>
-          <label htmlFor="name">
-            Name:<span className="required">*</span>
+          <label htmlFor="address">
+            Address:
           </label>
           <input
-            id="name"
-            name="name"
-            onChange={e => setName(e.target.value)}
-          ></input>
+            id="address"
+            name="address"
+            type="text"
+            placeholder="111 Smith Ave"
+            onChange={e => setAddress(e.target.value)}
+          />
         </div>
         <div>
-          <label htmlFor="name">
-            Name:<span className="required">*</span>
+          <label htmlFor="city">
+            City:<span className="required">*</span>
           </label>
           <input
-            id="name"
-            name="name"
-            onChange={e => setName(e.target.value)}
-          ></input>
+            id="city"
+            name="city"
+            type="text"
+            onChange={e => setCity(e.target.value)}
+          />
         </div>
         <div>
-          <label htmlFor="name">
-            Name:<span className="required">*</span>
+          <label htmlFor="state">
+            State/Province:
           </label>
           <input
-            id="name"
-            name="name"
-            onChange={e => setName(e.target.value)}
-          ></input>
+            id="state"
+            name="state"
+            type="text"
+            onChange={e => setState(e.target.value)}
+          />
         </div>
         <div>
-          <label htmlFor="name">
-            Name:<span className="required">*</span>
+          <label htmlFor="country">
+            Country:<span className="required">*</span>
           </label>
           <input
-            id="name"
-            name="name"
-            onChange={e => setName(e.target.value)}
-          ></input>
+            id="country"
+            name="country"
+            type="text"
+            onChange={e => setCountry(e.target.value)}
+          />
         </div>
         <div>
-          <label htmlFor="name">
-            Name:<span className="required">*</span>
+          <label htmlFor="price">
+            Price:<span className="required">*</span>
           </label>
           <input
-            id="name"
-            name="name"
-            onChange={e => setName(e.target.value)}
-          ></input>
+            id="price"
+            name="price"
+            type="text"
+            onChange={e => setPrice(e.target.value)}
+          />
         </div>
         <div>
-          <label htmlFor="name">
-            Name:<span className="required">*</span>
+          <label htmlFor="description">
+            Description:<span className="required">*</span>
           </label>
           <input
-            id="name"
-            name="name"
-            onChange={e => setName(e.target.value)}
-          ></input>
+            id="description"
+            name="description"
+            type="text"
+            onChange={e => setDescription(e.target.value)}
+          />
+        </div>
+        <div>
+          <button
+            type="submit"
+          >Submit</button>
         </div>
       </form>
     </div>
   )
 }
+
+export default CreateSpot;

@@ -12,7 +12,11 @@ const SpotsList = () => {
     dispatch(getSpots());
   }, [dispatch])
 
-  // console.log(Object.values(spots))
+  console.log(Object.values(spots))
+
+  // Object.values(spots).map(spot => {
+  //   console.log(spot.images)
+  // })
 
   return (
     spots ?
@@ -23,7 +27,7 @@ const SpotsList = () => {
             <div key={spot.id}>
               <div>{spot.name}</div>
               <div>
-                <img src={spot.images[0].imageUrl} />
+                <img src={spot.images[Object.keys(spot.images)[0]].imageUrl} />
               </div>
               <div>{spot.price}</div>
             </div>
