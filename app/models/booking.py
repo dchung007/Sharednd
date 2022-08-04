@@ -16,3 +16,14 @@ class Booking(db.Model):
 
     user_id = db.relationship("User", back_populates="user_bookings")
     booked_spot = db.relationship("Spot", back_populates="spot_bookings")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'userId': self.userId,
+            'spotId': self.spotId,
+            'startDate': self.startDate,
+            'endDate': self.endDate,
+            'price': self.price,
+            'createdAt': self.createdAt
+        }

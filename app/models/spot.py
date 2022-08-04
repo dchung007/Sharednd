@@ -19,3 +19,20 @@ class Spot(db.Model):
     owner = db.relationship("User", back_populates="owner_spots")
     spot_bookings = db.relationship("Booking", back_populates="booked_spot", cascade="all, delete")
     spot_images = db.relationship("Image", back_populates="spot_id", cascade="all, delete")
+    spot_reviews = db.relationship("Review", back_populates="review_spot", cascade="all, delete")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'ownerId': self.ownerId,
+            'name':self.name,
+            'address': self.address,
+            'city': self.city,
+            'state': self.state,
+            'country': self.country,
+            'price': self.price,
+            'description': self.description,
+            'createdAt': self.createdAt,
+            'images': [image.to_dict() for image in self.spot_images],
+            'reviews': [review.to_dict() for review in self.spot_reviews]
+        }

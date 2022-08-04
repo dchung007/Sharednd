@@ -11,3 +11,11 @@ class Image(db.Model):
     createdAt = db.Column(DateTime(timezone=True), server_default=func.now())
 
     spot_id = db.relationship("Spot", back_populates="spot_images")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'spotId': self.spotId,
+            'imageUrl': self.imageUrl,
+            'createdAt': self.createdAt
+        }
