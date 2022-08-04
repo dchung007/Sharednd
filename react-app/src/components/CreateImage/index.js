@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { addImage } from "../../store/spots";
 
 
 const CreateImage = () => {
   const dispatch = useDispatch();
   const history = useHistory();
+  const {spotId} = useParams();
   const [image1, setImage1] = useState(null);
   const [image2, setImage2] = useState(null);
   const [image3, setImage3] = useState(null);
@@ -51,79 +52,88 @@ const CreateImage = () => {
 
     // Image 1 submission
     const formData1 = new FormData();
+    formData1.append("spotId", spotId)
     formData1.append("image", image1);
 
     setImageLoading1(true);
 
     const createdImage1 = await dispatch(addImage(formData1));
-    if (createdImage1.ok) {
+    console.log(createdImage1)
+    if (createdImage1) {
+      console.log("--------------------------------createimage frontend successful!---------------------------------------")
       setImageLoading1(false);
+      history.push("/")
     }
     else {
+      // console.log("--------------------------------FAILURE!---------------------------------------")
       setImageLoading1(false);
-      console.log("error");
+      console.log("error1");
     }
 
-    // Image 2 submission
-    const formData2 = new FormData();
-    formData2.append("image", image2);
+    // // Image 2 submission
+    // const formData2 = new FormData();
+    // formData2.append("spotId", spotId)
+    // formData2.append("image", image2);
 
-    setImageLoading2(true);
+    // setImageLoading2(true);
 
-    const createdImage2 = await dispatch(addImage(formData2));
-    if (createdImage2.ok) {
-      setImageLoading2(false);
-    }
-    else {
-      setImageLoading2(false);
-      console.log("error");
-    }
+    // const createdImage2 = await dispatch(addImage(formData2));
+    // if (createdImage2.ok) {
+    //   setImageLoading2(false);
+    // }
+    // else {
+    //   setImageLoading2(false);
+    //   console.log("error2");
+    // }
 
-    // Image 3 submission
-    const formData3 = new FormData();
-    formData3.append("image", image3);
+    // // Image 3 submission
+    // const formData3 = new FormData();
+    // formData3.append("spotId", spotId)
+    // formData3.append("image", image3);
 
-    setImageLoading3(true);
+    // setImageLoading3(true);
 
-    const createdImage3 = await dispatch(addImage(formData3));
-    if (createdImage3.ok) {
-      setImageLoading3(false);
-    }
-    else {
-      setImageLoading3(false);
-      console.log("error");
-    }
+    // const createdImage3 = await dispatch(addImage(formData3));
+    // if (createdImage3.ok) {
+    //   setImageLoading3(false);
+    // }
+    // else {
+    //   setImageLoading3(false);
+    //   console.log("error3");
+    // }
 
-    // Image 4 submission
-    const formData4 = new FormData();
-    formData4.append("image", image4);
+    // // Image 4 submission
+    // const formData4 = new FormData();
+    // formData4.append("spotId", spotId)
+    // formData4.append("image", image4);
 
-    setImageLoading4(true);
+    // setImageLoading4(true);
 
-    const createdImage4 = await dispatch(addImage(formData4));
-    if (createdImage4.ok) {
-      setImageLoading4(false);
-    }
-    else {
-      setImageLoading4(false);
-      console.log("error");
-    }
+    // const createdImage4 = await dispatch(addImage(formData4));
+    // if (createdImage4.ok) {
+    //   setImageLoading4(false);
+    // }
+    // else {
+    //   setImageLoading4(false);
+    //   console.log("error4");
+    // }
 
-    // Image 5 submission
-    const formData5 = new FormData();
-    formData5.append("image", image5);
+    // // Image 5 submission
+    // const formData5 = new FormData();
+    // formData5.append("spotId", spotId)
+    // formData5.append("image", image5);
 
-    setImageLoading5(true);
+    // setImageLoading5(true);
 
-    const createdImage5 = await dispatch(addImage(formData5));
-    if (createdImage5.ok) {
-      setImageLoading5(false);
-      history.push('/')
-    }
-    else {
-      setImageLoading5(false);
-      console.log("error");
-    }
+    // const createdImage5 = await dispatch(addImage(formData5));
+    // if (createdImage5.ok) {
+    //   setImageLoading5(false);
+    //   history.push('/')
+    // }
+    // else {
+    //   setImageLoading5(false);
+    //   console.log("error5");
+    // }
   }
 
   return (
@@ -138,8 +148,9 @@ const CreateImage = () => {
             accept="image/*"
             onChange={updateImage1}
           />
+          {imageLoading1 && <p>Loading...</p>}
         </div>
-        <div>
+        {/* <div>
           <label htmlFor="create-image-file-2">Image 2:</label>
           <input
             id="create-image-file-2"
@@ -147,6 +158,7 @@ const CreateImage = () => {
             accept="image/*"
             onChange={updateImage2}
           />
+          {imageLoading2 && <p>Loading...</p>}
         </div>
         <div>
           <label htmlFor="create-image-file-3">Image 3:</label>
@@ -156,7 +168,9 @@ const CreateImage = () => {
             accept="image/*"
             onChange={updateImage3}
           />
-        </div>        <div>
+          {imageLoading3 && <p>Loading...</p>}
+        </div>
+        <div>
           <label htmlFor="create-image-file-4">Image 4:</label>
           <input
             id="create-image-file-4"
@@ -164,6 +178,7 @@ const CreateImage = () => {
             accept="image/*"
             onChange={updateImage4}
           />
+          {imageLoading4 && <p>Loading...</p>}
         </div>
         <div>
           <label htmlFor="create-image-file-5">Image 5:</label>
@@ -173,7 +188,8 @@ const CreateImage = () => {
             accept="image/*"
             onChange={updateImage5}
           />
-        </div>
+          {imageLoading5 && <p>Loading...</p>}
+        </div> */}
         <div>
           <button
             type="submit"

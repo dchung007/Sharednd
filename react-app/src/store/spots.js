@@ -103,9 +103,11 @@ export const addImage = (formData) => async (dispatch) => {
     body: formData
   })
 
+  console.log("--------------------------", "responseeee",response.ok, "--------------------------------")
   if (response.ok) {
     const image = await response.json();
     dispatch(actionAddImage(image))
+    console.log("-------------------Reached reponse.ok backend:",image, "-------------------")
     return image
   }
   else {
@@ -173,7 +175,12 @@ const spotsReducer = (state = {}, action) => {
 
     case ADD_IMAGE:
       const newState5 = { ...state }
-      newState5[action.image.spotId].images[action.image.id] = action.image
+      if (newState5[action.newImage.spotId].images) {
+        newState5[action.newImage.spotId].images[action.newImage.id] = action.newImage
+      } else {
+        newState5[action.newImage.spotId].images = {}
+        newState5[action.newImage.spotId].images[action.newImage.id] = action.newImage
+      }
       return newState5;
 
     case DELETE_IMAGE:
