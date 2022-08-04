@@ -58,14 +58,13 @@ export const addSpot = (spot) => async (dispatch) => {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({
-      spot
-    })
+    body: JSON.stringify(spot)
   });
 
   if (response.ok) {
     const newSpot = await response.json();
     dispatch(actionAddSpot(newSpot));
+    console.log(newSpot)
     return newSpot;
   }
 }
@@ -159,7 +158,7 @@ const spotsReducer = (state = {}, action) => {
 
     case ADD_SPOT:
       const newState2 = { ...state }
-      newState2[action.spot.id] = action.spot
+      newState2[action.newSpot.id] = action.newSpot
       return newState2;
 
     case EDIT_SPOT:

@@ -2,7 +2,8 @@ from flask import Blueprint, request
 from flask_login import login_required, current_user
 from ..models import db, Spot
 from app.forms.createspot_form import CreateSpotForm
-from app.form.editspot_form import EditSpotForm
+from app.forms.editspot_form import EditSpotForm
+from app.api.auth_routes import validation_errors_to_error_messages
 
 spot_routes = Blueprint('spots', __name__)
 
@@ -12,7 +13,7 @@ def get_all_spots():
     spots = Spot.query.all()
     return {'spots': [spot.to_dict() for spot in spots]}
 
-@spot_routes.route('/new')
+@spot_routes.route('/new', methods=['POST'])
 @login_required
 def create_spot():
     form = CreateSpotForm()

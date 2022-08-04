@@ -3,7 +3,6 @@ from wtforms import IntegerField, StringField
 from wtforms.validators import DataRequired
 
 class CreateSpotForm(FlaskForm):
-    ownerId = IntegerField('ownerId')
     name = StringField('name', validators=[DataRequired()])
     address = StringField('address')
     city = StringField('city', validators=[DataRequired()])
