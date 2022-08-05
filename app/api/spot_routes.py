@@ -13,6 +13,12 @@ def get_all_spots():
     spots = Spot.query.all()
     return {'spots': [spot.to_dict() for spot in spots]}
 
+@spot_routes.route('/<int:spotId>')
+@login_required
+def get_one_spot(spotId):
+    spot = Spot.query.get(spotId)
+    return {'spot': spot.to_dict()}
+
 @spot_routes.route('/new', methods=['POST'])
 @login_required
 def create_spot():

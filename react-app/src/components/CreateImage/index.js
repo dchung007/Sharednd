@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { addImage } from "../../store/spots";
 
 
 const CreateImage = () => {
   const dispatch = useDispatch();
   const history = useHistory();
+  const { spotId } = useParams();
   const [image1, setImage1] = useState(null);
   const [image2, setImage2] = useState(null);
   const [image3, setImage3] = useState(null);
@@ -51,85 +52,97 @@ const CreateImage = () => {
 
     // Image 1 submission
     const formData1 = new FormData();
+    formData1.append("spotId", spotId)
     formData1.append("image", image1);
 
     setImageLoading1(true);
 
     const createdImage1 = await dispatch(addImage(formData1));
-    if (createdImage1.ok) {
+    console.log(createdImage1)
+    if (createdImage1) {
+      console.log("--------------------------------createimage frontend successful!---------------------------------------")
       setImageLoading1(false);
+      // history.push("/")
     }
     else {
+      // console.log("--------------------------------FAILURE!---------------------------------------")
       setImageLoading1(false);
-      console.log("error");
+      console.log("error1");
     }
 
     // Image 2 submission
     const formData2 = new FormData();
+    formData2.append("spotId", spotId)
     formData2.append("image", image2);
 
     setImageLoading2(true);
 
     const createdImage2 = await dispatch(addImage(formData2));
-    if (createdImage2.ok) {
+    if (createdImage2) {
       setImageLoading2(false);
     }
     else {
       setImageLoading2(false);
-      console.log("error");
+      console.log("error2");
     }
 
     // Image 3 submission
     const formData3 = new FormData();
+    formData3.append("spotId", spotId)
     formData3.append("image", image3);
 
     setImageLoading3(true);
 
     const createdImage3 = await dispatch(addImage(formData3));
-    if (createdImage3.ok) {
+    if (createdImage3) {
       setImageLoading3(false);
     }
     else {
       setImageLoading3(false);
-      console.log("error");
+      console.log("error3");
     }
 
     // Image 4 submission
     const formData4 = new FormData();
+    formData4.append("spotId", spotId)
     formData4.append("image", image4);
 
     setImageLoading4(true);
 
     const createdImage4 = await dispatch(addImage(formData4));
-    if (createdImage4.ok) {
+    if (createdImage4) {
       setImageLoading4(false);
     }
     else {
       setImageLoading4(false);
-      console.log("error");
+      console.log("error4");
     }
 
     // Image 5 submission
     const formData5 = new FormData();
+    formData5.append("spotId", spotId)
     formData5.append("image", image5);
 
     setImageLoading5(true);
 
     const createdImage5 = await dispatch(addImage(formData5));
-    if (createdImage5.ok) {
+    if (createdImage5) {
       setImageLoading5(false);
-      history.push('/')
     }
     else {
       setImageLoading5(false);
-      console.log("error");
+      console.log("error5");
+    }
+
+    if (createdImage1 && createdImage2 && createdImage3 && createdImage4 && createdImage5) {
+      history.push('/')
     }
   }
 
   return (
     <div>
       <h1>Spot created!</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={(imageLoading1 || imageLoading2 || imageLoading3 || imageLoading4 || imageLoading5) ? "submitted-form" : "normal-form"}>
         <div>
           <label htmlFor="create-image-file-1">Image 1:</label>
           <input
@@ -156,7 +169,8 @@ const CreateImage = () => {
             accept="image/*"
             onChange={updateImage3}
           />
-        </div>        <div>
+        </div>
+        <div>
           <label htmlFor="create-image-file-4">Image 4:</label>
           <input
             id="create-image-file-4"
@@ -180,6 +194,7 @@ const CreateImage = () => {
           >Submit</button>
         </div>
       </form>
+      {(imageLoading1 || imageLoading2 || imageLoading3 || imageLoading4 || imageLoading5) && <p>Loading...</p>}
     </div>
 
   )

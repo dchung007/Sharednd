@@ -9,7 +9,7 @@ from app.s3_helpers import (
 image_routes = Blueprint('images', __name__)
 
 
-@image_routes.route('/new')
+@image_routes.route('/new', methods=['POST'])
 @login_required
 def create_image():
     try:
@@ -27,6 +27,7 @@ def create_image():
 
         upload = upload_file_to_s3(image)
 
+
         if "url" not in upload:
         # if the dictionary doesn't have a url key
         # it means that there was an error when we tried to upload
@@ -41,6 +42,7 @@ def create_image():
 
         return new_image.to_dict()
     except:
+
         return {'errors': 'Invalid csrf token'}, 400
 
 

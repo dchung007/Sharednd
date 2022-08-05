@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { addSpot } from "../../store/spots";
 import {useHistory} from "react-router-dom";
 
@@ -14,7 +14,6 @@ const CreateSpot = () => {
   const [country, setCountry] = useState('');
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState('');
-  const sessionUser = useSelector(state=> state.session.user)
 
   const handleSubmit = async (e) => {
     e.preventDefault()

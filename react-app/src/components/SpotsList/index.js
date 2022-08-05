@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { getSpots } from "../../store/spots";
-
 
 
 const SpotsList = () => {
@@ -12,12 +12,6 @@ const SpotsList = () => {
     dispatch(getSpots());
   }, [dispatch])
 
-  console.log(Object.values(spots))
-
-  // Object.values(spots).map(spot => {
-  //   console.log(spot.images)
-  // })
-
   return (
     spots ?
       <div>
@@ -25,11 +19,14 @@ const SpotsList = () => {
         {
           Object.values(spots).map(spot => (
             <div key={spot.id}>
-              <div>{spot.name}</div>
-              <div>
-                <img src={spot.images[Object.keys(spot.images)[0]].imageUrl} />
-              </div>
-              <div>{spot.price}</div>
+              <Link to={`/spots/${spot.id}`}>
+                <div>{spot.name}</div>
+                <div>
+                  <img
+                    src={spot.images[Object.keys(spot.images)[0]].imageUrl} />
+                </div>
+                <div>${spot.price}</div>
+              </Link>
             </div>
           ))
         }
