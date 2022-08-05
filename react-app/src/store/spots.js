@@ -1,4 +1,5 @@
 const LOAD_SPOTS = 'spots/LOAD_SPOTS';
+const LOAD_ONE_SPOT = 'spots/LOAD_ONE_SPOT';
 const ADD_SPOT = 'spots/ADD_SPOT';
 const EDIT_SPOT = 'spots/EDIT_SPOT';
 const DELETE_SPOT = 'spots/DELETE_SPOT';
@@ -10,6 +11,11 @@ const actionLoadSpots = (spots) => ({
   type: LOAD_SPOTS,
   spots
 });
+
+const actionLoadOneSpot = (spot) => ({
+  type: LOAD_ONE_SPOT,
+  spot
+})
 
 const actionAddSpot = (newSpot) => ({
   type: ADD_SPOT,
@@ -52,6 +58,16 @@ export const getSpots = () => async (dispatch) => {
   }
 }
 
+export const getOneSpot = (spotId) => async (dispatch) => {
+  const response = await fetch(`/api/spots/${spotId}`);
+
+  if (response.ok) {
+    const spot = await response.json();
+    dispatch(actionLoadOneSpot(spot));
+    return spot;
+  }
+}
+
 export const addSpot = (spot) => async (dispatch) => {
   const response = await fetch(`/api/spots/new`, {
     method: 'POST',
@@ -64,7 +80,6 @@ export const addSpot = (spot) => async (dispatch) => {
   if (response.ok) {
     const newSpot = await response.json();
     dispatch(actionAddSpot(newSpot));
-    console.log(newSpot)
     return newSpot;
   }
 }
@@ -75,9 +90,7 @@ export const editSpot = (spot) => async (dispatch) => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      spot
-    })
+    body: JSON.stringify(spot)
   });
 
   if (response.ok) {
@@ -93,7 +106,9 @@ export const deleteSpot = (spotId) => async (dispatch) => {
   });
 
   if (response.ok) {
+    const deletedSpot = await response.json();
     dispatch(actionDeleteSpot(spotId));
+    return deletedSpot;
   }
 }
 
@@ -103,11 +118,11 @@ export const addImage = (formData) => async (dispatch) => {
     body: formData
   })
 
-  console.log("--------------------------", "responseeee",response.ok, "--------------------------------")
+  console.log("--------------------------", "responseeee", response.ok, "--------------------------------")
   if (response.ok) {
     const image = await response.json();
     dispatch(actionAddImage(image))
-    console.log("-------------------Reached reponse.ok backend:",image, "-------------------")
+    console.log("-------------------Reached reponse.ok backend:", image, "-------------------")
     return image
   }
   else {
@@ -150,43 +165,53 @@ const spotsReducer = (state = {}, action) => {
       const newState1 = {};
       action.spots.spots.forEach(spot => {
         newState1[spot.id] = spot;
-        const imageObj = {}
+        const imageObj1 = {}
         spot.images.forEach(image => {
-          imageObj[image.id] = image
+          imageObj1[image.id] = image
         })
-        newState1[spot.id].images = imageObj
+        newState1[spot.id].images = imageObj1
       });
       return newState1;
 
-    case ADD_SPOT:
-      const newState2 = { ...state }
-      newState2[action.newSpot.id] = action.newSpot
+    case LOAD_ONE_SPOT:
+      const newState2 = {};
+      newState2[action.spot.id] = action.spot
+      const imageObj2 = {}
+      action.spot.images.forEach(image => {
+        imageObj2[image.id] = image
+      })
+      newState2[action.spot.id].images = imageObj2
       return newState2;
 
-    case EDIT_SPOT:
+    case ADD_SPOT:
       const newState3 = { ...state }
-      newState3[action.editedSpot.id] = action.editedSpot
+      newState3[action.newSpot.id] = action.newSpot
       return newState3;
 
-    case DELETE_SPOT:
+    case EDIT_SPOT:
       const newState4 = { ...state }
-      delete newState4[action.spotId]
+      newState4[action.editedSpot.id] = action.editedSpot
       return newState4;
 
-    case ADD_IMAGE:
+    case DELETE_SPOT:
       const newState5 = { ...state }
-      if (newState5[action.newImage.spotId].images) {
-        newState5[action.newImage.spotId].images[action.newImage.id] = action.newImage
-      } else {
-        newState5[action.newImage.spotId].images = {}
-        newState5[action.newImage.spotId].images[action.newImage.id] = action.newImage
-      }
+      delete newState5[action.spotId]
       return newState5;
 
-    case DELETE_IMAGE:
+    case ADD_IMAGE:
       const newState6 = { ...state }
-      delete newState6[action.imageId]
+      if (newState6[action.newImage.spotId].images) {
+        newState6[action.newImage.spotId].images[action.newImage.id] = action.newImage
+      } else {
+        newState6[action.newImage.spotId].images = {}
+        newState6[action.newImage.spotId].images[action.newImage.id] = action.newImage
+      }
       return newState6;
+
+    case DELETE_IMAGE:
+      const newState7 = { ...state }
+      delete newState7[action.imageId]
+      return newState7;
 
     default:
       return state;

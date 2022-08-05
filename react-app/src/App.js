@@ -11,6 +11,8 @@ import { authenticate } from './store/session';
 import SpotsList from './components/SpotsList';
 import CreateSpot from './components/CreateSpot';
 import CreateImage from './components/CreateImage';
+import SpotDetails from './components/SpotDetails';
+import EditSpot from './components/EditSpot';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -45,6 +47,12 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/spots/new' exact={true}>
           <CreateSpot />
+        </ProtectedRoute>
+        <ProtectedRoute path='/spots/:spotId' exact={true}>
+          <SpotDetails />
+        </ProtectedRoute>
+        <ProtectedRoute path='/spots/:spotId/edit' exact={true}>
+          <EditSpot />
         </ProtectedRoute>
         <ProtectedRoute path='/spots/:spotId/images/new' exact={true}>
           <CreateImage />
