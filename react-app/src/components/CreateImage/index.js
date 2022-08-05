@@ -60,7 +60,7 @@ const CreateImage = () => {
     const createdImage1 = await dispatch(addImage(formData1));
     console.log(createdImage1)
     if (createdImage1) {
-      console.log("--------------------------------createimage frontend successful!---------------------------------------")
+      // console.log("--------------------------------createimage frontend successful!---------------------------------------")
       setImageLoading1(false);
       // history.push("/")
     }
