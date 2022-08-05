@@ -118,11 +118,11 @@ export const addImage = (formData) => async (dispatch) => {
     body: formData
   })
 
-  console.log("--------------------------", "responseeee", response.ok, "--------------------------------")
+  // console.log("--------------------------", "responseeee", response.ok, "--------------------------------")
   if (response.ok) {
     const image = await response.json();
     dispatch(actionAddImage(image))
-    console.log("-------------------Reached reponse.ok backend:", image, "-------------------")
+    // console.log("-------------------Reached reponse.ok backend:", image, "-------------------")
     return image
   }
   else {
@@ -155,6 +155,7 @@ export const deleteImage = (imageId) => async (dispatch) => {
 
   if (response.ok) {
     dispatch(actionDeleteImage(imageId));
+    return imageId;
   }
 }
 
