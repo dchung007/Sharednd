@@ -23,8 +23,18 @@ const actionDeleteBooking = (bookingId) = ({
   bookingId
 })
 
-export const getBookings = () => async (dispatch) => {
-  const response = await fetch(`/api/bookings`);
+export const getSpotBookings = (spotId) => async (dispatch) => {
+  const response = await fetch(`/api/bookings/${spotId}/all`);
+
+  if (response.ok) {
+    const bookings = await response.json()
+    dispatch(actionLoadBookings(bookings))
+    return bookings
+  }
+}
+
+export const getUserBookings = (userId) => async (dispatch) => {
+  const response = await fetch(`/api/bookings/${userId}/all`);
 
   if (response.ok) {
     const bookings = await response.json()
@@ -80,12 +90,26 @@ export const deleteBooking = (bookingId) => async (dispatch) => {
 const bookingsReducer = (state = {}, action) => {
   switch (action.type) {
     case LOAD_BOOKINGS:
-      
+      const newState1 = {};
+      action.bookings.bookings.forEach(booking => {
+        newState1[booking.id] = booking
+      });
+      return newState1;
+
     case ADD_BOOKING:
+      const newState2 = { ...state };
+      newState2[action.newBooking.id] = action.newBooking
+      return newState2;
 
     case EDIT_BOOKING:
+      const newState3 = { ...state };
+      newState3[action.editedBooking.id] = action.editedBooking
+      return newState3;
 
     case DELETE_BOOKING:
+      const newState4 = { ...state };
+      delete newState4[action.bookingId]
+      return newState4;
 
     default:
       return state;
