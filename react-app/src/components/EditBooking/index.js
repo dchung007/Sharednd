@@ -19,11 +19,16 @@ const EditBooking = ({ booking }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-
-    if (isSameDay(date[0], date[1])) {
+    console.log(date)
+    if (isSameDay(date[0], date[1]) || !Array.isArray(date)) {
       alert("Please select an endDate!")
       return;
     }
+
+    // if (date.length > 2) {
+    //   alert("Please select a date")
+    //   return;
+    // }
 
     const finalPrice = differenceInDays(date[1], date[0]) * booking.spot.price;
 

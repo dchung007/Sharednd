@@ -21,10 +21,11 @@ const CreateBooking = ({ spot }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    if (isSameDay(date[0], date[1])) {
+    if (isSameDay(date[0], date[1]) || !Array.isArray(date)) {
       alert("Please select an endDate!")
       return;
     }
+
 
     const finalPrice = differenceInDays(date[1], date[0]) * spot.price;
 
