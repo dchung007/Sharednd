@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getUserBookings } from "../../store/bookings";
+import { deleteBooking, getUserBookings } from "../../store/bookings";
 import EditBooking from "../EditBooking";
 
 
@@ -13,7 +13,15 @@ const UserBookingsList = () => {
     dispatch(getUserBookings(sessionUser?.id))
   }, [dispatch])
 
-  console.log(Object.values(bookings))
+  // console.log(Object.values(bookings))
+
+  const handleDelete = async (bookingId) => {
+    let booking = await dispatch(deleteBooking(bookingId))
+
+    if (booking) {
+      console.log('booking deleted!')
+    }
+  }
 
   return (
     bookings ?
@@ -28,7 +36,8 @@ const UserBookingsList = () => {
               Price: ${booking.price}
             </div>
             <div>
-              <EditBooking />
+              <button onClick={() => handleDelete(booking.id)}>Cancel reservation</button>
+              <EditBooking booking={booking} />
             </div>
           </div>
         ))}

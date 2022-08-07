@@ -7,13 +7,13 @@ from app.api.auth_routes import validation_errors_to_error_messages
 
 booking_routes = Blueprint('bookings', __name__)
 
-@booking_routes.route('/<int:spotId>/all')
+@booking_routes.route('/spot/<int:spotId>/all')
 @login_required
 def get_spot_bookings(spotId):
     bookings = Booking.query.filter_by(spotId=spotId).all()
     return {'bookings': [booking.to_dict() for booking in bookings]}
 
-@booking_routes.route('/<int:userId>/all')
+@booking_routes.route('/user/<int:userId>/all')
 @login_required
 def get_user_bookings(userId):
     bookings = Booking.query.filter_by(userId=userId).all()
@@ -24,7 +24,7 @@ def get_user_bookings(userId):
 def create_booking():
     form = CreateBookingForm()
 
-    form['csrf_token'].data = request.cookies['crsf_token']
+    form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         booking = Booking(
             userId=current_user.id,
@@ -45,7 +45,7 @@ def edit_booking(bookingId):
 
     form = EditBookingForm()
 
-    form['csrf_token'].data = request.cookies['crsf_token']
+    form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         booking.startDate = form.data['startDate']
         booking.endDate = form.data['endDate']

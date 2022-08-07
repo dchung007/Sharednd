@@ -6,11 +6,10 @@ import { useDispatch } from "react-redux";
 import { addBooking, editBooking } from "../../store/bookings";
 import 'react-calendar/dist/Calendar.css';
 
-const EditBooking = ({ spot }) => {
+const EditBooking = ({ booking }) => {
   const dispatch = useDispatch();
-  const { spotId } = useParams();
   const [date, setDate] = useState(new Date());
-  console.log(date)
+  // console.log(date)
 
 
   const isSameDay = (a, b) => {
@@ -26,13 +25,16 @@ const EditBooking = ({ spot }) => {
       return;
     }
 
-    const finalPrice = differenceInDays(date[1], date[0]) * spot.price;
+    const finalPrice = differenceInDays(date[1], date[0]) * booking.spot.price;
 
-    console.log(format(date[0], 'yyyy-MM-dd'));
-    console.log(format(date[1], 'yyyy-MM-dd'));
+    console.log(finalPrice)
+
+    // console.log(format(date[0], 'yyyy-MM-dd'));
+    // console.log(format(date[1], 'yyyy-MM-dd'));
 
     const editedBooking = {
-      spotId,
+      id: booking.id,
+      spotId: booking.spotId,
       startDate: format(date[0], 'yyyy-MM-dd'),
       endDate: format(date[1], 'yyyy-MM-dd'),
       price: finalPrice
@@ -40,16 +42,16 @@ const EditBooking = ({ spot }) => {
 
     let updatedBooking = await dispatch(editBooking(editedBooking))
     if (updatedBooking) {
-      console.log('success!')
+      console.log('edit was successful!')
     }
 
   }
 
   return (
     <div>
-      <h1>Create A Booking!</h1>
+      <h1>Edit A Booking!</h1>
       <form onSubmit={handleSubmit}>
-        <button type="submit">Reserve</button>
+        <button type="submit">Update Reservation</button>
         <div>
           <Calendar
             value={date}
