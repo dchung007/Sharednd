@@ -24,7 +24,7 @@ const actionDeleteBooking = (bookingId) => ({
 })
 
 export const getSpotBookings = (spotId) => async (dispatch) => {
-  const response = await fetch(`/api/bookings/${spotId}/all`);
+  const response = await fetch(`/api/bookings/spot/${spotId}/all`);
 
   if (response.ok) {
     const bookings = await response.json()
@@ -34,7 +34,7 @@ export const getSpotBookings = (spotId) => async (dispatch) => {
 }
 
 export const getUserBookings = (userId) => async (dispatch) => {
-  const response = await fetch(`/api/bookings/${userId}/all`);
+  const response = await fetch(`/api/bookings/user/${userId}/all`);
 
   if (response.ok) {
     const bookings = await response.json()
