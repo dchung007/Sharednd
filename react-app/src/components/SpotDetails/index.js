@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { deleteSpot, getOneSpot, getSpots } from "../../store/spots";
+import CreateBooking from "../CreateBooking";
 
 
 
@@ -63,9 +64,10 @@ const SpotDetails = () => {
           </div>
         }
         <div>
-          <Link to={`/spots/${spot.id}/bookings/new`}>
+          {/* <Link to={`/spots/${spot.id}/bookings/new`}>
           Book this spot now!
-          </Link>
+          </Link> */}
+          <CreateBooking spot={spot} />
         </div>
       </div>
       :
