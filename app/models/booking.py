@@ -25,5 +25,6 @@ class Booking(db.Model):
             'startDate': self.startDate,
             'endDate': self.endDate,
             'price': self.price,
-            'createdAt': self.createdAt
+            'createdAt': self.createdAt,
+            'spot': self.booked_spot.to_dict()
         }

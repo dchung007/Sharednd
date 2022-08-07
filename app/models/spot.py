@@ -36,3 +36,4 @@ class Spot(db.Model):
             'images': [image.to_dict() for image in self.spot_images],
             'reviews': [review.to_dict() for review in self.spot_reviews]
         }
+
