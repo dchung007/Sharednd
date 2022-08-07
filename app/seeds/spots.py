@@ -18,7 +18,7 @@ def seed_spots():
       address='924 Bel Air Rd',
       city='Los Angeles',
       state='California',
-      country='USA',
+      country='United States',
       price=45910,
       description='An absolute unit of a house, it has got everything you can think of. You will never be bored here!'
     )
@@ -32,46 +32,46 @@ def seed_spots():
       price=9565,
       description='Picturesque version of Greece- the beautiful beaches, amazing home filled with aesthetic architecture. A huge pool and crystal clear waters.'
     )
-    # spot4 = Spot(
-    #   ownerId=4,
-    #   name='',
-    #   address='',
-    #   city='',
-    #   state='',
-    #   country='',
-    #   price=1000,
-    #   description=''
-    # )
-    # spot5 = Spot(
-    #   ownerId=5,
-    #   name='',
-    #   address='',
-    #   city='',
-    #   state='',
-    #   country='',
-    #   price=1000,
-    #   description=''
-    # )
-    # spot6 = Spot(
-    #   ownerId=6,
-    #   name='',
-    #   address='',
-    #   city='',
-    #   state='',
-    #   country='',
-    #   price=1000,
-    #   description=''
-    # )
-    # spot7 = Spot(
-    #   ownerId=1,
-    #   name='',
-    #   address='',
-    #   city='',
-    #   state='',
-    #   country='',
-    #   price=1000,
-    #   description=''
-    # )
+    spot4 = Spot(
+      ownerId=4,
+      name='Iconic Glass Mansion',
+      address='',
+      city='Osage Beach',
+      state='Missouri',
+      country='United States',
+      price=1580,
+      description='The iconic and luxurious Glass Mansion has awe-inspiring, expansive lake views for miles from almost every room. It is located directly in the heart of Lake of the Ozarks in Osage Beach.'
+    )
+    spot5 = Spot(
+      ownerId=5,
+      name='Invisible House Joshua Tree - Skyscraper with Pool',
+      address='',
+      city='Joshua Tree',
+      state='California',
+      country='United States',
+      price=4390,
+      description='Quite simply, Invisible House is the most spectacular house in Joshua Tree. As seen in design and lifestyle publications worldwide, this mirrored 22 story horizontal skyscraper virtually disappears into the vast desert landscape. The luxurious 100-foot indoor swimming pool contrasts with the High Desert surroundings. The 90 acre property has its own 4000ft mountain and shares half a mile border with the National Park.'
+    )
+    spot6 = Spot(
+      ownerId=6,
+      name='Casa Paradiso',
+      address='',
+      city='Austin',
+      state='Texas',
+      country='United States',
+      price=3830,
+      description='Mexican style gets a Texas twist at this bright but cozy home on Lake Austin. A palapa-covered swim-up bar sets the tone for outdoor spaces with a pool, fireplace, and a sun-splashed patio right next to the dock. Walls of windows frame lake views, and stone arches frame fireplaces in the living and family rooms. Drive 25 minutes to shopping, dining, and state capitol tours in downtown Austin.'
+    )
+    spot7 = Spot(
+      ownerId=1,
+      name='Malibu Mid-Century Modern Luxury retreat home',
+      address='',
+      city='Malibu',
+      state='California',
+      country='United States',
+      price=1680,
+      description='Relax in a luxurious 3-story Malibu getaway with spectacular ocean & mountain views. Our newly-built mid-century modern 4 bedroom, 3.5 bath home is nestled in the peaceful Santa Monica mountains just minutes from Southern California\'s most famous beaches. Enjoy a stylish space and wall to wall open views to the ocean. Every bedroom has ocean views.'
+    )
     # spot8 = Spot(
     #   ownerId=2,
     #   name='',
@@ -206,10 +206,10 @@ def seed_spots():
     db.session.add(spot1)
     db.session.add(spot2)
     db.session.add(spot3)
-    # db.session.add(spot4)
-    # db.session.add(spot5)
-    # db.session.add(spot6)
-    # db.session.add(spot7)
+    db.session.add(spot4)
+    db.session.add(spot5)
+    db.session.add(spot6)
+    db.session.add(spot7)
     # db.session.add(spot8)
     # db.session.add(spot9)
     # db.session.add(spot10)

@@ -27,7 +27,7 @@ def upgrade():
     sa.Column('state', sa.String(length=100), nullable=False),
     sa.Column('country', sa.String(length=100), nullable=False),
     sa.Column('price', sa.Integer(), nullable=False),
-    sa.Column('description', sa.String(length=250), nullable=False),
+    sa.Column('description', sa.String(length=1000), nullable=False),
     sa.Column('createdAt', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=True),
     sa.ForeignKeyConstraint(['ownerId'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')

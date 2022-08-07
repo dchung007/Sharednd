@@ -13,7 +13,7 @@ class Spot(db.Model):
     state = db.Column(db.String(100))
     country = db.Column(db.String(100), nullable=False)
     price = db.Column(db.Integer, nullable=False)
-    description = db.Column(db.String(250), nullable=False)
+    description = db.Column(db.String(1000), nullable=False)
     createdAt = db.Column(DateTime(timezone=True), server_default=func.now())
 
     owner = db.relationship("User", back_populates="owner_spots")
@@ -36,4 +36,3 @@ class Spot(db.Model):
             'images': [image.to_dict() for image in self.spot_images],
             'reviews': [review.to_dict() for review in self.spot_reviews]
         }
-

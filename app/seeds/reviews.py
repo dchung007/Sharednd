@@ -30,7 +30,7 @@ def seed_reviews():
     review5 = Review(
       userId=3,
       spotId=1,
-      review='The pool was so refreshing, and walking through the trees and relaxing was well worth it.',
+      review='The water was so refreshing, and walking through the trees and relaxing was well worth it.',
       rating=4,
     )
     review6 = Review(
