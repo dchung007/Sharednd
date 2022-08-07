@@ -123,26 +123,26 @@ def seed_images():
       spotId=6,
       imageUrl='https://sharedndbucket.s3.us-west-1.amazonaws.com/image30-AustinTexas.png'
     )
-    # image31 = Image(
-    #   spotId=7,
-    #   imageUrl=''
-    # )
-    # image32 = Image(
-    #   spotId=7,
-    #   imageUrl=''
-    # )
-    # image33 = Image(
-    #   spotId=7,
-    #   imageUrl=''
-    # )
-    # image34 = Image(
-    #   spotId=7,
-    #   imageUrl=''
-    # )
-    # image35 = Image(
-    #   spotId=7,
-    #   imageUrl=''
-    # )
+    image31 = Image(
+      spotId=7,
+      imageUrl='https://sharedndbucket.s3.us-west-1.amazonaws.com/image31-MalibuCalifornia.png'
+    )
+    image32 = Image(
+      spotId=7,
+      imageUrl='https://sharedndbucket.s3.us-west-1.amazonaws.com/image32-MalibuCalifornia.png'
+    )
+    image33 = Image(
+      spotId=7,
+      imageUrl='https://sharedndbucket.s3.us-west-1.amazonaws.com/image33-MalibuCalifornia.png'
+    )
+    image34 = Image(
+      spotId=7,
+      imageUrl='https://sharedndbucket.s3.us-west-1.amazonaws.com/image34-MalibuCalifornia.png'
+    )
+    image35 = Image(
+      spotId=7,
+      imageUrl='https://sharedndbucket.s3.us-west-1.amazonaws.com/image35-MalibuCalifornia.png'
+    )
     # image36 = Image(
     #   spotId=8,
     #   imageUrl=''
@@ -239,11 +239,11 @@ def seed_images():
     db.session.add(image28)
     db.session.add(image29)
     db.session.add(image30)
-    # db.session.add(image31)
-    # db.session.add(image32)
-    # db.session.add(image33)
-    # db.session.add(image34)
-    # db.session.add(image35)
+    db.session.add(image31)
+    db.session.add(image32)
+    db.session.add(image33)
+    db.session.add(image34)
+    db.session.add(image35)
     # db.session.add(image36)
     # db.session.add(image37)
     # db.session.add(image38)

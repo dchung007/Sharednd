@@ -62,16 +62,16 @@ def seed_spots():
       price=3830,
       description='Mexican style gets a Texas twist at this bright but cozy home on Lake Austin. A palapa-covered swim-up bar sets the tone for outdoor spaces with a pool, fireplace, and a sun-splashed patio right next to the dock. Walls of windows frame lake views, and stone arches frame fireplaces in the living and family rooms. Drive 25 minutes to shopping, dining, and state capitol tours in downtown Austin.'
     )
-    # spot7 = Spot(
-    #   ownerId=1,
-    #   name='',
-    #   address='',
-    #   city='',
-    #   state='',
-    #   country='',
-    #   price=1000,
-    #   description=''
-    # )
+    spot7 = Spot(
+      ownerId=1,
+      name='Malibu Mid-Century Modern Luxury retreat home',
+      address='',
+      city='Malibu',
+      state='California',
+      country='United States',
+      price=1680,
+      description='Relax in a luxurious 3-story Malibu getaway with spectacular ocean & mountain views. Our newly-built mid-century modern 4 bedroom, 3.5 bath home is nestled in the peaceful Santa Monica mountains just minutes from Southern California\'s most famous beaches. Enjoy a stylish space and wall to wall open views to the ocean. Every bedroom has ocean views.'
+    )
     # spot8 = Spot(
     #   ownerId=2,
     #   name='',
@@ -209,7 +209,7 @@ def seed_spots():
     db.session.add(spot4)
     db.session.add(spot5)
     db.session.add(spot6)
-    # db.session.add(spot7)
+    db.session.add(spot7)
     # db.session.add(spot8)
     # db.session.add(spot9)
     # db.session.add(spot10)
