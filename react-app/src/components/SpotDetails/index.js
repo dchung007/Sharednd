@@ -62,6 +62,11 @@ const SpotDetails = () => {
             </div>
           </div>
         }
+        <div>
+          <Link to={`/spots/${spot.id}/bookings/new`}>
+          Book this spot now!
+          </Link>
+        </div>
       </div>
       :
       <h1>Loading...</h1>

@@ -5,7 +5,7 @@ from app.forms.createbooking_form import CreateBookingForm
 from app.forms.editbooking_form import EditBookingForm
 from app.api.auth_routes import validation_errors_to_error_messages
 
-booking_routes = Blueprint('spots', __name__)
+booking_routes = Blueprint('bookings', __name__)
 
 @booking_routes.route('/<int:spotId>/all')
 @login_required
@@ -55,7 +55,7 @@ def edit_booking(bookingId):
     return {'errors':validation_errors_to_error_messages(form.errors)}, 401
 
 
-@booking.route('/<int:bookingId>/delete', methods=['DELETE'])
+@booking_routes.route('/<int:bookingId>/delete', methods=['DELETE'])
 @login_required
 def delete_booking(bookingId):
     booking = Booking.query.get(bookingId)
