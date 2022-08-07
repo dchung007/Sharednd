@@ -3,22 +3,22 @@ const ADD_BOOKING = 'bookings/ADD_BOOKING'
 const EDIT_BOOKING = 'bookings/EDIT_BOOKING'
 const DELETE_BOOKING = 'bookings/DELETE_BOOKING'
 
-const actionLoadBookings = (bookings) = ({
+const actionLoadBookings = (bookings) => ({
   type: LOAD_BOOKINGS,
   bookings
 })
 
-const actionAddBooking = (newBooking) = ({
+const actionAddBooking = (newBooking) => ({
   type: ADD_BOOKING,
   newBooking
 })
 
-const actionEditBooking = (editedBooking) = ({
+const actionEditBooking = (editedBooking) => ({
   type: EDIT_BOOKING,
   editedBooking
 })
 
-const actionDeleteBooking = (bookingId) = ({
+const actionDeleteBooking = (bookingId) => ({
   type: DELETE_BOOKING,
   bookingId
 })

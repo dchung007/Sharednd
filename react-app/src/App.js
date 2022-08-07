@@ -13,6 +13,7 @@ import CreateSpot from './components/CreateSpot';
 import CreateImage from './components/CreateImage';
 import SpotDetails from './components/SpotDetails';
 import EditSpot from './components/EditSpot';
+import CreateBooking from './components/CreateBooking';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -48,15 +49,20 @@ function App() {
         <ProtectedRoute path='/spots/new' exact={true}>
           <CreateSpot />
         </ProtectedRoute>
-        <ProtectedRoute path='/spots/:spotId' exact={true}>
-          <SpotDetails />
-        </ProtectedRoute>
-        <ProtectedRoute path='/spots/:spotId/edit' exact={true}>
-          <EditSpot />
+        <ProtectedRoute path='/spots/:spotId/bookings/new' exact={true}>
+          <CreateBooking/>
         </ProtectedRoute>
         <ProtectedRoute path='/spots/:spotId/images/new' exact={true}>
           <CreateImage />
         </ProtectedRoute>
+        <ProtectedRoute path='/spots/:spotId/edit' exact={true}>
+          <EditSpot />
+        </ProtectedRoute>
+        <ProtectedRoute path='/spots/:spotId' exact={true}>
+          <SpotDetails />
+        </ProtectedRoute>
+
+
         <ProtectedRoute path='/' exact={true} >
           <SpotsList />
         </ProtectedRoute>
