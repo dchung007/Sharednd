@@ -25,24 +25,28 @@ const NavBar = () => {
             Sign Up
           </NavLink>
         </li>
+        {sessionUser &&
+          <>
+            <li>
+              <NavLink to={`/users/${sessionUser.id}/profile`} exact={true} activeClassName='active'>
+                User Bookings
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/spots/new" exact={true} activeClassName='active'>
+                Create Spot
+              </NavLink>
+            </li>
+            <li>
+              <LogoutButton />
+            </li>
+          </>
+        }
         {/* <li>
-          <NavLink to={`/users/${sessionUser.id}/profile`} exact={true} activeClassName='active'>
-            Profile
-          </NavLink>
-        </li> */}
-        <li>
           <NavLink to='/users' exact={true} activeClassName='active'>
             Users
           </NavLink>
-        </li>
-        <li>
-          <NavLink to="/spots/new" exact={true} activeClassName='active'>
-            Create Spot
-          </NavLink>
-        </li>
-        <li>
-          <LogoutButton />
-        </li>
+        </li> */}
       </ul>
     </nav>
   );
