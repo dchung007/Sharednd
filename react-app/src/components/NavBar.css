@@ -1,0 +1,37 @@
+.logo-text {
+  width: 100px;
+  height: 31px;
+}
+
+.full-logo>a {
+  display: flex;
+  flex-direction: row;
+  width: 135px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar-container {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 1250px;
+  height: 60px;
+
+}
+
+.navbar-right {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-pic {
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+}

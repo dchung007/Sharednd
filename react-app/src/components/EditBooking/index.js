@@ -6,16 +6,21 @@ import { useDispatch } from "react-redux";
 import { addBooking, editBooking } from "../../store/bookings";
 import 'react-calendar/dist/Calendar.css';
 
-const EditBooking = ({ booking }) => {
+const EditBooking = ({ booking, hideForm }) => {
   const dispatch = useDispatch();
   const [date, setDate] = useState(new Date());
   // console.log(date)
 
+  
 
   const isSameDay = (a, b) => {
     return differenceInCalendarDays(a, b) === 0;
   }
 
+  const handleCancel = (e) => {
+    e.preventDefault();
+    hideForm();
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -57,6 +62,7 @@ const EditBooking = ({ booking }) => {
       <h1>Edit A Booking!</h1>
       <form onSubmit={handleSubmit}>
         <button type="submit">Update Reservation</button>
+        <button type="button" onClick={handleCancel}>Cancel</button>
         <div>
           <Calendar
             value={date}
