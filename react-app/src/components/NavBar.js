@@ -3,12 +3,16 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
+import { ReactComponent as Logo } from '../images/airbnb-logo.svg';
 
 const NavBar = () => {
   const sessionUser = useSelector(state => state.session.user)
-  
+
   return (
     <nav>
+      <div>
+        <Logo />
+      </div>
       <ul>
         <li>
           <NavLink to='/' exact={true} activeClassName='active'>

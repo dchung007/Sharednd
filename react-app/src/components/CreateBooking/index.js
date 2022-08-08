@@ -29,8 +29,8 @@ const CreateBooking = ({ spot }) => {
 
     const finalPrice = differenceInDays(date[1], date[0]) * spot.price;
 
-    console.log(format(date[0], 'yyyy-MM-dd'));
-    console.log(format(date[1], 'yyyy-MM-dd'));
+    // console.log(format(date[0], 'yyyy-MM-dd'));
+    // console.log(format(date[1], 'yyyy-MM-dd'));
 
     const newBooking = {
       spotId,
