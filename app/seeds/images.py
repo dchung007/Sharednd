@@ -265,23 +265,23 @@ def seed_images():
     )
     image66 = Image(
       spotId=14,
-      imageUrl=''
+      imageUrl='https://sharedndbucket.s3.us-west-1.amazonaws.com/image66-ThonotosassaFlorida.png'
     )
     image67 = Image(
       spotId=14,
-      imageUrl=''
+      imageUrl='https://sharedndbucket.s3.us-west-1.amazonaws.com/image67-ThonotosassaFlorida.png'
     )
     image68 = Image(
       spotId=14,
-      imageUrl=''
+      imageUrl='https://sharedndbucket.s3.us-west-1.amazonaws.com/image68-ThonotosassaFlorida.png'
     )
     image69 = Image(
       spotId=14,
-      imageUrl=''
+      imageUrl='https://sharedndbucket.s3.us-west-1.amazonaws.com/image69-ThonotosassaFlorida.png'
     )
     image70 = Image(
       spotId=14,
-      imageUrl=''
+      imageUrl='https://sharedndbucket.s3.us-west-1.amazonaws.com/image70-ThonotosassaFlorida.png'
     )
     # image71 = Image(
     #   spotId=15,

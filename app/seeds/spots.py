@@ -134,13 +134,13 @@ def seed_spots():
     )
     spot14 = Spot(
       ownerId=4,
-      name='',
+      name='Paradise Luxury Resort Style Lakefront, Pool and Hot Tub',
       address='',
-      city='',
-      state='',
-      country='',
-      price=1000,
-      description=''
+      city='Thonotosassa',
+      state='Florida',
+      country='United States',
+      price=1280,
+      description='New LUXURY Lakefront Mansion on an absolutely amazing Resort Style Estate on over 2 acres. It has something for everyone. Lay out by the pool, relax in the hot tub or shoot some pool in the game room. Watch the sunrise or sunset on the dock. Or go tubing or wake boarding on the lake. It\'s breathtaking! Relax in the hot tub or roast marshmallows on the fire pit after a long day at the beach, area amusement parks or golf.'
     )
     # spot15 = Spot(
     #   ownerId=4,
