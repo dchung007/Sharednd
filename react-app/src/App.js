@@ -13,7 +13,7 @@ import CreateSpot from './components/CreateSpot';
 import CreateImage from './components/CreateImage';
 import SpotDetails from './components/SpotDetails';
 import EditSpot from './components/EditSpot';
-import CreateBooking from './components/CreateBooking';
+// import CreateBooking from './components/CreateBooking';
 import UserBookingsList from './components/BookingsList';
 
 function App() {
@@ -62,14 +62,12 @@ function App() {
         <ProtectedRoute path='/spots/:spotId/edit' exact={true}>
           <EditSpot />
         </ProtectedRoute>
-        <ProtectedRoute path='/spots/:spotId' exact={true}>
+        <Route path='/spots/:spotId' exact={true}>
           <SpotDetails />
-        </ProtectedRoute>
-
-
-        <ProtectedRoute path='/' exact={true} >
+        </Route>
+        <Route path='/' exact={true} >
           <SpotsList />
-        </ProtectedRoute>
+        </Route>
       </Switch>
     </BrowserRouter>
   );

@@ -8,13 +8,11 @@ from app.api.auth_routes import validation_errors_to_error_messages
 spot_routes = Blueprint('spots', __name__)
 
 @spot_routes.route('/all')
-@login_required
 def get_all_spots():
     spots = Spot.query.all()
     return {'spots': [spot.to_dict() for spot in spots]}
 
 @spot_routes.route('/<int:spotId>')
-@login_required
 def get_one_spot(spotId):
     spot = Spot.query.get(spotId)
     return {'spot': spot.to_dict()}
