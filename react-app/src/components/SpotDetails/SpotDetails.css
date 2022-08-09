@@ -1,0 +1,32 @@
+.spot-details-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  align-items: center;
+  margin: auto;
+}
+
+.spot-images {
+  display: flex;
+  flex-direction: row;
+}
+
+.spot-single-image {
+  max-width: 270px;
+  max-height: 160px;
+}
+
+.image-0 {
+  max-width: 560px;
+  max-height: 320px;
+}
+
+.create-booking-calendar {
+  position: sticky;
+  top: 20px;
+  /* right: 20px; */
+}
+
+.spot-name {
+  font-size: 26px;
+}

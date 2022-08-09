@@ -5,6 +5,7 @@ import { differenceInCalendarDays, differenceInDays, format } from 'date-fns';
 import { useDispatch } from "react-redux";
 import { addBooking } from "../../store/bookings";
 import 'react-calendar/dist/Calendar.css';
+import './CreateBooking.css'
 
 const CreateBooking = ({ spot }) => {
   const dispatch = useDispatch();
@@ -47,16 +48,18 @@ const CreateBooking = ({ spot }) => {
   }
 
   return (
-    <div>
+    <div className="create-booking-container">
       <h1>Create A Booking!</h1>
       <form onSubmit={handleSubmit}>
-        <button type="submit">Reserve</button>
-        <div>
+        <div className="calendar">
           <Calendar
             value={date}
             onChange={setDate}
             selectRange={true}
           />
+        </div>
+        <div>
+          <button type="submit">Reserve</button>
         </div>
       </form>
     </div>
