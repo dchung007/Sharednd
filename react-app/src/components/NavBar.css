@@ -22,6 +22,7 @@ a {
   padding-right: 20px;
   max-width: 1250px;
   height: 60px;
+  align-items: center;
 }
 
 .navbar-right {
@@ -29,8 +30,21 @@ a {
   flex-direction: row;
 }
 
-.profile-pic {
+/* .profile-pic {
   width: 29px;
   height: 29px;
   border-radius: 50%;
+} */
+
+.dropdown-button {
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  background-color: #ffffff;
+  border: solid 1px gray;
+  cursor: pointer;
+  width: 65px;
+  height: 35px;
+  justify-content: space-between;
+  padding: 6px 6px;
 }

@@ -51,7 +51,7 @@ const SpotDetails = () => {
             </div>
           ))}
         </div>
-        {sessionUser.id === spot.ownerId &&
+        {sessionUser && sessionUser.id === spot.ownerId &&
           <div>
             <div>
               <Link to={`/spots/${spot.id}/edit`}>
