@@ -1,5 +1,9 @@
 /* TODO Add site wide styles */
-img {
+/* img {
   height: 200px;
   width: 200px;
+} */
+
+body * {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }

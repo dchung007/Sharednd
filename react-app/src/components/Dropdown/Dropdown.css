@@ -1,0 +1,15 @@
+.dropdown-container {
+  position: absolute;
+  top: 55px;
+  list-style: none;
+  margin-left: -130px;
+  width: 220px;
+  background-color: white;
+  padding: 5px;
+  box-shadow: 0px 0px 3px lightgray;
+  border-radius: 15px;
+}
+
+.dropdown-container > div {
+  padding: 10px;
+}

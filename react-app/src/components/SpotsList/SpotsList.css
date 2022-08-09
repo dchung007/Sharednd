@@ -1,0 +1,17 @@
+.spot-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  max-width: 1600px;
+  place-items: center;
+  gap: 30px 10px;
+}
+
+.spot-list-images {
+  max-width: 300px;
+  max-height: 285px;
+  min-width: 240px;
+  min-height: 230px;
+  border-radius: 15px;
+}
+
+/* .single-spot-container {} */

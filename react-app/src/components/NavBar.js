@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { ReactComponent as Logo } from '../images/airbnb-logo.svg';
+import { ReactComponent as DropdownDash } from '../images/navbar-dash.svg';
+import { ReactComponent as ProfilePic } from '../images/default-profile-pic.svg';
 import sharedndLogo from '../images/sharednd-logo-2.png'
 import defaultProfilePic from '../images/default-user-profile-pic.png';
 import './NavBar.css'
@@ -26,29 +28,12 @@ const NavBar = () => {
       </div>
       <div className='navbar-right'>
         <div>
-          <NavLink to='/login' exact={true} activeClassName='active'>
-            Login
-          </NavLink>
+          <button className='dropdown-button' onClick={() => handleClick()}>
+            <DropdownDash />
+            <ProfilePic/>
+          </button>
+          {dropdown && <Dropdown sessionUser={sessionUser} />}
         </div>
-        <div>
-          <NavLink to='/sign-up' exact={true} activeClassName='active'>
-            Sign Up
-          </NavLink>
-        </div>
-        {
-          sessionUser &&
-          <>
-            <div onClick={() => handleClick()}>
-              <img className="profile-pic" src={defaultProfilePic} />
-              {dropdown && <Dropdown sessionUser={sessionUser} />}
-            </div>
-          </>
-        }
-        {/* <div>
-          <NavLink to='/users' exact={true} activeClassName='active'>
-            Users
-          </NavLink>
-        </div> */}
       </div>
     </nav >
   );

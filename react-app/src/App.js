@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import LoginForm from './components/auth/LoginForm';
-import SignUpForm from './components/auth/SignUpForm';
+// import LoginForm from './components/auth/LoginFormModal/LoginForm';
+// import SignUpForm from './components/auth/SignUpFormModal/SignUpForm';
 import NavBar from './components/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
-import UsersList from './components/UsersList';
-import User from './components/User';
+// import UsersList from './components/UsersList';
+// import User from './components/User';
 import { authenticate } from './store/session';
 import SpotsList from './components/SpotsList';
 import CreateSpot from './components/CreateSpot';
@@ -15,6 +15,8 @@ import SpotDetails from './components/SpotDetails';
 import EditSpot from './components/EditSpot';
 // import CreateBooking from './components/CreateBooking';
 import UserBookingsList from './components/BookingsList';
+// import LoginFormModal from './components/auth/LoginFormModal';
+// import SignupFormModal from './components/auth/SignupFormModal';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -35,21 +37,21 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Switch>
-        <Route path='/login' exact={true}>
-          <LoginForm />
+        {/* <Route path='/login' exact={true}>
+          <LoginFormModal />
         </Route>
         <Route path='/sign-up' exact={true}>
-          <SignUpForm />
-        </Route>
-        <ProtectedRoute path='/users' exact={true} >
+          <SignupFormModal />
+        </Route> */}
+        {/* <ProtectedRoute path='/users' exact={true} >
           <UsersList />
-        </ProtectedRoute>
+        </ProtectedRoute> */}
         <ProtectedRoute path='/users/:userId/profile' exact={true}>
           <UserBookingsList />
         </ProtectedRoute>
-        <ProtectedRoute path='/users/:userId' exact={true} >
+        {/* <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
-        </ProtectedRoute>
+        </ProtectedRoute> */}
         <ProtectedRoute path='/spots/new' exact={true}>
           <CreateSpot />
         </ProtectedRoute>

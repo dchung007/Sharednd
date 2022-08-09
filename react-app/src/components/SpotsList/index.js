@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getSpots } from "../../store/spots";
-
+import './SpotsList.css'
 
 const SpotsList = () => {
   const dispatch = useDispatch();
@@ -14,18 +14,19 @@ const SpotsList = () => {
 
   return (
     spots ?
-      <div>
-        <h1>Spots List</h1>
+      <div className="spot-list-container">
+        {/* <h1>Spots List</h1> */}
         {
           Object.values(spots).map(spot => (
-            <div key={spot.id}>
+            <div className="single-spot-container" key={spot.id}>
               <Link to={`/spots/${spot.id}`}>
-                <div>{spot.name}</div>
                 <div>
                   <img
+                    className="spot-list-images"
                     src={spot.images[Object.keys(spot.images)[0]].imageUrl} />
                 </div>
-                <div>${spot.price}</div>
+                <div>{spot.city}, {spot.state ? spot.state : spot.country} </div>
+                <div>${spot.price} night</div>
               </Link>
             </div>
           ))
