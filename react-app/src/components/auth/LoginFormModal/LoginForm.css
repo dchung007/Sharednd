@@ -80,6 +80,19 @@ button.login-button {
   margin-left: 60px;
 }
 
+button.demo-button-login {
+  background: #FF5A5F;
+  color: white;
+  border-style: outset;
+  border-color: orangered;
+  height:40px;
+  width: 100px;
+  font: bold 15px arial, sans-serif;
+  text-shadow: none;
+  border-radius: 15px;
+  margin-left: 80px;
+  margin-bottom: 15px;
+}
 
 button.menu-buttons {
   background: none;
