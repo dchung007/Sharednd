@@ -1,0 +1,12 @@
+.calendar {
+  max-width: 300px;
+  max-height: 230px;
+  width: auto;
+  height: auto;
+}
+
+/* .create-booking-calendar {
+  width: 320px;
+  height: 440px;
+  position: sticky;
+} */

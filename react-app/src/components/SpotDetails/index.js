@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { deleteSpot, getOneSpot, getSpots } from "../../store/spots";
 import CreateBooking from "../CreateBooking";
+import './SpotDetails.css'
 
 
 
@@ -36,39 +37,55 @@ const SpotDetails = () => {
 
   return (
     spot ?
-      <div>
-        <h1>Spot Details</h1>
+      <div className="spot-details-container">
         <div>
-          {spot.name}
-        </div>
-        <div>
-          ${spot.price}
-        </div>
-        <div>
-          {Object.values(spot.images).map(image => (
+          <h1>Spot Details</h1>
+          <div className="spot-name">
+            {spot.name}
+          </div>
+          <div>
+            ${spot.price}
+          </div>
+          {sessionUser && sessionUser.id === spot.ownerId &&
             <div>
-              <img src={image.imageUrl} />
+              <div>
+                <Link to={`/spots/${spot.id}/edit`}>
+                  Edit
+                </Link>
+              </div>
+              <div>
+                <button onClick={e => handleDelete(e)}>Delete</button>
+              </div>
+            </div>
+          }
+        </div>
+        <div className="spot-images">
+          {Object.values(spot.images).map((image, index) => (
+            <div key={image.id}>
+              <img className={`spot-single-image image-${index}`} src={image.imageUrl} />
             </div>
           ))}
         </div>
-        {sessionUser && sessionUser.id === spot.ownerId &&
-          <div>
-            <div>
-              <Link to={`/spots/${spot.id}/edit`}>
-                Edit
-              </Link>
-            </div>
-            <div>
-              <button onClick={e => handleDelete(e)}>Delete</button>
-            </div>
-          </div>
-        }
+
         <div>
-          {/* <Link to={`/spots/${spot.id}/bookings/new`}>
+          <div>
+            Hosted by {spot.owner.username}
+          </div>
+          <div>
+            {/* {spot.reviews && Object.values(spot.reviews).map(review => (
+              <div key={review.id}>
+                {review}
+              </div>
+            ))} */}
+          </div>
+          <div className="create-booking-calendar">
+            {/* <Link to={`/spots/${spot.id}/bookings/new`}>
           Book this spot now!
           </Link> */}
-          <CreateBooking spot={spot} />
+            <CreateBooking spot={spot} />
+          </div>
         </div>
+
       </div>
       :
       <h1>Loading...</h1>
