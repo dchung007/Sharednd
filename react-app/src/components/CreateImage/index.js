@@ -140,59 +140,74 @@ const CreateImage = () => {
   }
 
   return (
-    <div>
-      <h1>Spot created!</h1>
-      <form onSubmit={handleSubmit} className={(imageLoading1 || imageLoading2 || imageLoading3 || imageLoading4 || imageLoading5) ? "submitted-form" : "normal-form"}>
-        <div>
-          <label htmlFor="create-image-file-1">Image 1:</label>
-          <input
-            id="create-image-file-1"
-            type="file"
-            accept="image/*"
-            onChange={updateImage1}
-          />
+    <div className="image-form">
+      <form onSubmit={handleSubmit} className="image-form">
+        <div className='form-title'>
+          <h1>
+            Spot created! You're almost there...
+          </h1>
+          <h4>
+            Upload your images
+          </h4>
         </div>
-        <div>
-          <label htmlFor="create-image-file-2">Image 2:</label>
-          <input
-            id="create-image-file-2"
-            type="file"
-            accept="image/*"
-            onChange={updateImage2}
-          />
-        </div>
-        <div>
-          <label htmlFor="create-image-file-3">Image 3:</label>
-          <input
-            id="create-image-file-3"
-            type="file"
-            accept="image/*"
-            onChange={updateImage3}
-          />
-        </div>
-        <div>
-          <label htmlFor="create-image-file-4">Image 4:</label>
-          <input
-            id="create-image-file-4"
-            type="file"
-            accept="image/*"
-            onChange={updateImage4}
-          />
-        </div>
-        <div>
-          <label htmlFor="create-image-file-5">Image 5:</label>
-          <input
-            id="create-image-file-5"
-            type="file"
-            accept="image/*"
-            onChange={updateImage5}
-          />
-        </div>
-        <div>
-          <button
-            type="submit"
-          >Submit</button>
-        </div>
+        <ul className="image-form-list">
+          <li>
+            <label htmlFor="create-image-file-1">Image 1<span className="required">*</span>:</label>
+            <input
+              className="field-image"
+              id="create-image-file-1"
+              type="file"
+              accept="image/*"
+              onChange={updateImage1}
+            />
+          </li>
+          <li>
+            <label htmlFor="create-image-file-2">Image 2<span className="required">*</span>:</label>
+            <input
+              className="field-image"
+              id="create-image-file-2"
+              type="file"
+              accept="image/*"
+              onChange={updateImage2}
+            />
+          </li>
+          <li>
+            <label htmlFor="create-image-file-3">Image 3<span className="required">*</span>:</label>
+            <input
+              className="field-image"
+              id="create-image-file-3"
+              type="file"
+              accept="image/*"
+              onChange={updateImage3}
+            />
+          </li>
+          <li>
+            <label htmlFor="create-image-file-4">Image 4<span className="required">*</span>:</label>
+            <input
+              className="field-image"
+              id="create-image-file-4"
+              type="file"
+              accept="image/*"
+              onChange={updateImage4}
+            />
+          </li>
+          <li>
+            <label htmlFor="create-image-file-5">Image 5<span className="required">*</span>:</label>
+            <input
+              className="field-image"
+              id="create-image-file-5"
+              type="file"
+              accept="image/*"
+              onChange={updateImage5}
+            />
+          </li>
+          <li>
+            <button
+              type="submit"
+              className='image-button'
+            >Submit</button>
+          </li>
+        </ul>
       </form>
       {(imageLoading1 || imageLoading2 || imageLoading3 || imageLoading4 || imageLoading5) && <p>Loading...</p>}
     </div>

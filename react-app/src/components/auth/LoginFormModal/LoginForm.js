@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // import { Redirect } from 'react-router-dom';
 import { login } from '../../../store/session';
+import './LoginForm.css'
 
-const LoginForm = ({hideModal}) => {
+const LoginForm = ({ hideModal }) => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -35,33 +36,49 @@ const LoginForm = ({hideModal}) => {
   }
 
   return (
-    <form onSubmit={onLogin}>
-      <div>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
+    <form className='login-form' onSubmit={onLogin}>
+      <div className='form-title'>
+        <h1>
+          Welcome to Sharednd
+        </h1>
+        <h4>
+          Login now!
+        </h4>
       </div>
-      <div>
-        <label htmlFor='email'>Email</label>
-        <input
-          name='email'
-          type='text'
-          placeholder='Email'
-          value={email}
-          onChange={updateEmail}
-        />
-      </div>
-      <div>
-        <label htmlFor='password'>Password</label>
-        <input
-          name='password'
-          type='password'
-          placeholder='Password'
-          value={password}
-          onChange={updatePassword}
-        />
-        <button type='submit'>Login</button>
-      </div>
+      <ul className='login-form-list'>
+        <div className='errors-list'>
+          {errors.map((error, ind) => (
+            <div key={ind}>{error}</div>
+          ))}
+        </div>
+        <li>
+          <label htmlFor='email'>Email<span className="required">*</span>
+            <input
+              className="field-login"
+              name='email'
+              type='text'
+              placeholder='Email'
+              value={email}
+              onChange={updateEmail}
+            />
+          </label>
+        </li>
+        <li>
+          <label htmlFor='password'>Password<span className="required">*</span>
+            <input
+              className="field-login"
+              name='password'
+              type='password'
+              placeholder='Password'
+              value={password}
+              onChange={updatePassword}
+            />
+          </label>
+        </li>
+        <li className='login-button'>
+          <button className='login-button' type='submit'>Login</button>
+        </li>
+      </ul>
     </form>
   );
 };

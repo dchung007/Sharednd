@@ -38,11 +38,14 @@ const Dropdown = ({ sessionUser }) => {
           </NavLink>
         </div>
       }
-      <div>
-        <NavLink to="/spots/new" exact={true} activeClassName='active'>
-          Host an experience
-        </NavLink>
-      </div>
+      {
+        sessionUser &&
+        <div>
+          <NavLink to="/spots/new" exact={true} activeClassName='active'>
+            Host an experience
+          </NavLink>
+        </div>
+      }
       {
         sessionUser &&
         <div>

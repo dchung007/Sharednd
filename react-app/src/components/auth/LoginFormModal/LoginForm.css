@@ -1,37 +1,31 @@
-/* .submitted-form {
-  display: none;
-} */
-
-form.image-form {
+form.login-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
-.image-form-list {
-  /* margin: 10px auto; */
+.login-form-list {
   max-width: 400px;
   padding: 20px 12px 10px 20px;
   font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-.image-form-list li {
+.login-form-list li {
   padding: 0;
   display: block;
   list-style: none;
   margin: 10px 0 0 0;
 }
 
-.image-form-list label {
+.login-form-list label {
   margin: 0 0 3px 0;
   padding: 0px;
   display: block;
   font-weight: bold;
 }
 
-.image-form-list input[type=text],
-.image-form-list input[type=password] {
+.login-form-list input[type=text],
+.login-form-list input[type=password] {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -47,33 +41,33 @@ form.image-form {
   ;
 }
 
-.image-form-list .field-image {
+.login-form-list .field-login {
   width: 100%;
 }
 
 
 
-.image-form-list input[type=submit],
-.image-form-list input[type=button] {
+.login-form-list input[type=submit],
+.login-form-list input[type=button] {
   background: #4B99AD;
   padding: 8px 15px 8px 15px;
   border: none;
   color: #fff;
 }
 
-.image-form-list input[type=submit]:hover,
-.image-form-list input[type=button]:hover {
+.login-form-list input[type=submit]:hover,
+.login-form-list input[type=button]:hover {
   background: #4691A4;
   box-shadow: none;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
 }
 
-.image-form-list .required {
+.login-form-list .required {
   color: red;
 }
 
-button.image-button {
+button.login-button {
   background: #FF5A5F;
   color: white;
   border-style: outset;
