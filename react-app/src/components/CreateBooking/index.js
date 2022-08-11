@@ -11,6 +11,7 @@ const CreateBooking = ({ spot }) => {
   const dispatch = useDispatch();
   const { spotId } = useParams();
   const [date, setDate] = useState(new Date());
+  const [errors, setErrors] = useState([]);
   console.log(date)
 
 
@@ -42,7 +43,7 @@ const CreateBooking = ({ spot }) => {
 
     let createdBooking = await dispatch(addBooking(newBooking))
     if (createdBooking) {
-      console.log('success!')
+      setErrors(createdBooking)
     }
 
   }
@@ -51,6 +52,11 @@ const CreateBooking = ({ spot }) => {
     <div className="create-booking-container">
       <h1>Create A Booking!</h1>
       <form onSubmit={handleSubmit}>
+        <div>
+          {errors.map((error, ind) => (
+            <div key={ind}>{error}</div>
+          ))}
+        </div>
         <div className="calendar">
           <Calendar
             value={date}

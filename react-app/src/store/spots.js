@@ -80,7 +80,14 @@ export const addSpot = (spot) => async (dispatch) => {
   if (response.ok) {
     const newSpot = await response.json();
     dispatch(actionAddSpot(newSpot));
-    return newSpot;
+    return { "newSpot": newSpot };
+  } else if (response.status < 500) {
+    const data = await response.json();
+    if (data.errors) {
+      return data.errors;
+    }
+  } else {
+    return ['An error occurred. Please try again.']
   }
 }
 
@@ -123,11 +130,14 @@ export const addImage = (formData) => async (dispatch) => {
     const image = await response.json();
     dispatch(actionAddImage(image))
     // console.log("-------------------Reached reponse.ok backend:", image, "-------------------")
-    return image
-  }
-  else {
-    const error = await response.json();
-    return error
+    return {'image':image}
+  } else if (response.status < 500) {
+    const data = await response.json();
+    if (data.errors) {
+      return data.errors;
+    }
+  } else {
+    return ['An error occurred. Please try again.']
   }
 }
 

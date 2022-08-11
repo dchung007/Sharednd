@@ -8,6 +8,12 @@ const CreateImage = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { spotId } = useParams();
+  const [totalErrors, setTotalErrors] = useState([]);
+  const [errors1, setErrors1] = useState([]);
+  const [errors2, setErrors2] = useState([]);
+  const [errors3, setErrors3] = useState([]);
+  const [errors4, setErrors4] = useState([]);
+  const [errors5, setErrors5] = useState([]);
   const [image1, setImage1] = useState(null);
   const [image2, setImage2] = useState(null);
   const [image3, setImage3] = useState(null);
@@ -59,7 +65,7 @@ const CreateImage = () => {
 
     const createdImage1 = await dispatch(addImage(formData1));
     console.log(createdImage1)
-    if (createdImage1) {
+    if (createdImage1.image) {
       // console.log("--------------------------------createimage frontend successful!---------------------------------------")
       setImageLoading1(false);
       // history.push("/")
@@ -67,7 +73,7 @@ const CreateImage = () => {
     else {
       // console.log("--------------------------------FAILURE!---------------------------------------")
       setImageLoading1(false);
-      console.log("error1");
+      setErrors1(`image1: ${createdImage1}`)
     }
 
     // Image 2 submission
@@ -78,12 +84,13 @@ const CreateImage = () => {
     setImageLoading2(true);
 
     const createdImage2 = await dispatch(addImage(formData2));
-    if (createdImage2) {
+    if (createdImage2.image) {
       setImageLoading2(false);
     }
     else {
       setImageLoading2(false);
-      console.log("error2");
+      // console.log("error2");
+      setErrors2(`image2: ${createdImage2}`)
     }
 
     // Image 3 submission
@@ -94,12 +101,13 @@ const CreateImage = () => {
     setImageLoading3(true);
 
     const createdImage3 = await dispatch(addImage(formData3));
-    if (createdImage3) {
+    if (createdImage3.image) {
       setImageLoading3(false);
     }
     else {
       setImageLoading3(false);
-      console.log("error3");
+      // console.log("error3");
+      setErrors3(`image3: ${createdImage3}`)
     }
 
     // Image 4 submission
@@ -110,12 +118,13 @@ const CreateImage = () => {
     setImageLoading4(true);
 
     const createdImage4 = await dispatch(addImage(formData4));
-    if (createdImage4) {
+    if (createdImage4.image) {
       setImageLoading4(false);
     }
     else {
       setImageLoading4(false);
-      console.log("error4");
+      // console.log("error4");
+      setErrors4(`image4: ${createdImage4}`)
     }
 
     // Image 5 submission
@@ -126,16 +135,20 @@ const CreateImage = () => {
     setImageLoading5(true);
 
     const createdImage5 = await dispatch(addImage(formData5));
-    if (createdImage5) {
+    if (createdImage5.image) {
       setImageLoading5(false);
     }
     else {
       setImageLoading5(false);
       console.log("error5");
+      setErrors5(`image5: ${createdImage5}`)
     }
 
-    if (createdImage1 && createdImage2 && createdImage3 && createdImage4 && createdImage5) {
+    if (createdImage1.image && createdImage2.image && createdImage3.image && createdImage4.image && createdImage5.image) {
       history.push('/')
+    } else {
+      console.log("---------------------------------------------fail")
+      setTotalErrors([errors1 + errors2 + errors3 + errors4 + errors5])
     }
   }
 
@@ -149,6 +162,11 @@ const CreateImage = () => {
           <h4>
             Upload your images
           </h4>
+        </div>
+        <div className='errors-list'>
+          {totalErrors.map((error, ind) => (
+            <div key={ind}>{error}</div>
+          ))}
         </div>
         <ul className="image-form-list">
           <li>

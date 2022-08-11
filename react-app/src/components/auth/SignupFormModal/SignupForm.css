@@ -116,4 +116,5 @@ div.form-title {
 .errors-list {
   display: flex;
   flex-direction: column;
+  width: 150px;
 }

@@ -3,7 +3,7 @@ from flask_login import login_required, current_user
 from ..models import db, Spot
 from app.forms.createspot_form import CreateSpotForm
 from app.forms.editspot_form import EditSpotForm
-from app.api.auth_routes import validation_errors_to_error_messages
+from .auth_routes import validation_errors_to_error_messages
 
 spot_routes = Blueprint('spots', __name__)
 

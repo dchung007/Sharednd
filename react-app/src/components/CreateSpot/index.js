@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { addSpot } from "../../store/spots";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 
 const CreateSpot = () => {
@@ -14,6 +14,7 @@ const CreateSpot = () => {
   const [country, setCountry] = useState('');
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState('');
+  const [errors, setErrors] = useState([])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -29,8 +30,10 @@ const CreateSpot = () => {
     }
 
     let createdSpot = await dispatch(addSpot(newSpot))
-    if (createdSpot) {
-      history.push(`/spots/${createdSpot.id}/images/new`)
+    if (createdSpot.newSpot) {
+      history.push(`/spots/${createdSpot.newSpot.id}/images/new`)
+    } else {
+      setErrors(createdSpot)
     }
   }
 
@@ -38,6 +41,16 @@ const CreateSpot = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
+        <div className='form-title'>
+          <h1>
+            Host your home now!
+          </h1>
+        </div>
+        <div className='errors-list'>
+          {errors.map((error, ind) => (
+            <div key={ind}>{error}</div>
+          ))}
+        </div>
         <div>
           <label htmlFor="name">
             Name:<span className="required">*</span>
