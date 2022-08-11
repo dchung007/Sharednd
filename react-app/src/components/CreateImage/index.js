@@ -225,7 +225,7 @@ const CreateImage = () => {
           </li>
         </ul>
       </form>
-      {(imageLoading1 || imageLoading2 || imageLoading3 || imageLoading4 || imageLoading5) && <p>Loading...</p>}
+      {(imageLoading1 || imageLoading2 || imageLoading3 || imageLoading4 || imageLoading5) && <p>Images uploading...</p>}
     </div>
 
   )
