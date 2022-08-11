@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { addImage } from "../../store/spots";
@@ -24,8 +24,6 @@ const CreateImage = () => {
   const [imageLoading3, setImageLoading3] = useState(false);
   const [imageLoading4, setImageLoading4] = useState(false);
   const [imageLoading5, setImageLoading5] = useState(false);
-
-
 
 
   const updateImage1 = (e) => {
@@ -148,7 +146,7 @@ const CreateImage = () => {
       history.push('/')
     } else {
       console.log("---------------------------------------------fail")
-      setTotalErrors([errors1 + errors2 + errors3 + errors4 + errors5])
+      setTotalErrors([errors1, errors2, errors3, errors4, errors5])
     }
   }
 
