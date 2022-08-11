@@ -18,6 +18,7 @@ const SignUpForm = ({ hideModal }) => {
   const demoPassword = 'password';
 
   const demoLogin = async (e) => {
+    e.preventDefault()
     await dispatch(login(demoEmail, demoPassword))
   }
 
@@ -55,8 +56,8 @@ const SignUpForm = ({ hideModal }) => {
   }
 
   return (
-    <div>
-      <form className='signup-form' onSubmit={onSignUp}>
+    <div className='signup-form' >
+      <form onSubmit={onSignUp}>
         <div className='form-title'>
           <h1>
             Welcome to Sharednd
@@ -125,11 +126,14 @@ const SignUpForm = ({ hideModal }) => {
           <li>
             <button className='signup-button' type='submit'>Sign Up</button>
           </li>
+          <li>
+            <button
+              type='button'
+              className='demo-button-signup'
+              onClick={demoLogin}>Log in with Demo User</button>
+          </li>
         </ul>
       </form>
-      <div>
-        <button className='demo-button-signup' onClick={demoLogin}>Log in with Demo User</button>
-      </div>
     </div>
   );
 };

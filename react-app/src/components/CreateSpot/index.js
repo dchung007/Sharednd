@@ -40,13 +40,13 @@ const CreateSpot = () => {
 
   return (
     <div className="create-spot-container">
-      <form className='signup-form' onSubmit={handleSubmit}>
+      <form className='create-spot-form' onSubmit={handleSubmit}>
         <div className='form-title'>
           <h1>
             Host your home now!
           </h1>
         </div>
-        <ul className='signup-form-list'>
+        <ul className='create-spot-form-list'>
           <div className='errors-list'>
             {errors.map((error, ind) => (
               <div key={ind}>{error}</div>
@@ -57,7 +57,7 @@ const CreateSpot = () => {
               Name:<span className="required">*</span>
             </label>
             <input
-              className="field-signup"
+              className="field-create-spot"
               id="name"
               name="name"
               type="text"
@@ -69,7 +69,7 @@ const CreateSpot = () => {
               Address:
             </label>
             <input
-              className="field-signup"
+              className="field-create-spot"
               id="address"
               name="address"
               type="text"
@@ -82,7 +82,7 @@ const CreateSpot = () => {
               City:<span className="required">*</span>
             </label>
             <input
-              className="field-signup"
+              className="field-create-spot"
               id="city"
               name="city"
               type="text"
@@ -94,7 +94,7 @@ const CreateSpot = () => {
               State/Province:
             </label>
             <input
-              className="field-signup"
+              className="field-create-spot"
               id="state"
               name="state"
               type="text"
@@ -106,7 +106,7 @@ const CreateSpot = () => {
               Country:<span className="required">*</span>
             </label>
             <input
-              className="field-signup"
+              className="field-create-spot"
               id="country"
               name="country"
               type="text"
@@ -118,7 +118,7 @@ const CreateSpot = () => {
               Price:<span className="required">*</span>
             </label>
             <input
-              className="field-signup"
+              className="field-create-spot"
               id="price"
               name="price"
               type="text"
@@ -130,7 +130,7 @@ const CreateSpot = () => {
               Description:<span className="required">*</span>
             </label>
             <input
-              className="field-signup"
+              className="field-create-spot"
               id="description"
               name="description"
               type="text"
@@ -139,7 +139,7 @@ const CreateSpot = () => {
           </li>
           <li>
             <button
-            className="signup-button"
+            className="create-spot-button"
               type="submit"
             >Submit</button>
           </li>

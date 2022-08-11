@@ -38,7 +38,7 @@ const SpotDetails = () => {
   return (
     spot ?
       <div className="spot-details-container">
-        <div>
+        <div className="spot-heading">
           <h1>Spot Details</h1>
           <div className="spot-name">
             {spot.name}
@@ -75,9 +75,18 @@ const SpotDetails = () => {
           }
         </div>
 
+
         <div>
           <div>
             Hosted by {spot.owner.username}
+          </div>
+          <div>
+            <div>
+              <h3>About this space</h3>
+            </div>
+            <div>
+              {spot.description}
+            </div>
           </div>
           <div>
             {/* {spot.reviews && Object.values(spot.reviews).map(review => (
