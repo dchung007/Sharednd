@@ -3,7 +3,7 @@
   justify-content: center;
 }
 
-form.signup-form {
+form.create-spot-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,29 +12,29 @@ form.signup-form {
   border-radius: 30px;
 }
 
-.signup-form-list {
+.create-spot-form-list {
   /* margin: 10px auto; */
   max-width: 400px;
   padding: 10px;
   font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-.signup-form-list li {
+.create-spot-form-list li {
   padding: 0;
   display: block;
   list-style: none;
   margin: 10px 0 0 0;
 }
 
-.signup-form-list label {
+.create-spot-form-list label {
   margin: 0 0 3px 0;
   padding: 0px;
   display: block;
   font-weight: bold;
 }
 
-.signup-form-list input[type=text],
-.signup-form-list input[type=password] {
+.create-spot-form-list input[type=text],
+.create-spot-form-list input[type=password] {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -50,33 +50,33 @@ form.signup-form {
   ;
 }
 
-.signup-form-list .field.signup {
+.create-spot-form-list .field.create-spot {
   width: 100%;
 }
 
 
 
-.signup-form-list input[type=submit],
-.signup-form-list input[type=button] {
+.create-spot-form-list input[type=submit],
+.create-spot-form-list input[type=button] {
   background: #4B99AD;
   padding: 8px 15px 8px 15px;
   border: none;
   color: #fff;
 }
 
-.signup-form-list input[type=submit]:hover,
-.signup-form-list input[type=button]:hover {
+.create-spot-form-list input[type=submit]:hover,
+.create-spot-form-list input[type=button]:hover {
   background: #4691A4;
   box-shadow: none;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
 }
 
-.signup-form-list .required {
+.create-spot-form-list .required {
   color: red;
 }
 
-button.signup-button {
+button.create-spot-button {
   background: #FF5A5F;
   color: white;
   border-style: outset;
@@ -100,7 +100,7 @@ button.menu-buttons {
   outline: inherit;
 }
 
-.demo-button-signup {
+.demo-button-create-spot {
   background: #FF5A5F;
   color: white;
   border-style: outset;
