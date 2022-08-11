@@ -28,30 +28,28 @@ const BookingDetails = ({ booking }) => {
   return (
     <div className="booking-container">
       <div>
-        <div>
-          <img className="booking-image" src={booking.spot.images[0].imageUrl}></img>
-        </div>
-        <div>
-          <div>
-            {booking.spot.city}
-          </div>
-          <div>
-            Hosted by {booking.spot.owner.username}
-          </div>
-          <div>
-            Dates: {newStartDate} - {newEndDate}
-          </div>
-        </div>
+        <img className="booking-image" src={booking.spot.images[0].imageUrl}></img>
       </div>
-      {
-        !showEditBooking ?
-          <div>
-            <button className="edit-booking-button" onClick={() => setShowEditBooking(true)}>Edit reservation</button>
-            <button className="edit-booking-button" onClick={() => handleDelete(booking.id)}>Remove reservation</button>
-          </div>
-          :
-          <EditBooking booking={booking} hideForm={() => setShowEditBooking(false)} />
-      }
+      <div className="booking-info">
+        <div>
+          {booking.spot.city}
+        </div>
+        <div>
+          Hosted by {booking.spot.owner.username}
+        </div>
+        <div>
+          Dates: {newStartDate} - {newEndDate}
+        </div>
+        {
+          !showEditBooking ?
+            <div>
+              <button className="edit-booking-button" onClick={() => setShowEditBooking(true)}>Edit reservation</button>
+              <button className="edit-booking-button" onClick={() => handleDelete(booking.id)}>Remove reservation</button>
+            </div>
+            :
+            <EditBooking booking={booking} hideForm={() => setShowEditBooking(false)} />
+        }
+      </div>
     </div>
   )
 }

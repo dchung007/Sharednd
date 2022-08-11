@@ -11,14 +11,15 @@
   max-height: 285px;
   min-width: 240px;
   min-height: 230px;
-  border-radius: 15px;
+  border-radius: 15px 15px 0px 0px;
 }
 
 .single-spot-container {
-  box-shadow: 5px 5px #FF5A5F;
+  box-shadow: rgb(0 0 0 / 50%) 0px 6px 16px;
   object-fit: cover;
   border-radius: 15px;
-  padding: 0px 0px 5px 5px;
 }
 
-
+.spot-list-spot-info {
+  padding: 10px;
+}
