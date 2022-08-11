@@ -23,7 +23,7 @@ const SpotsList = () => {
                 <div>
                   <img
                     className="spot-list-images"
-                    src={spot.images[Object.keys(spot.images)[0]].imageUrl} />
+                    src={spot.images[Object.keys(spot.images)[0]] ? spot.images[Object.keys(spot.images)[0]].imageUrl : 'https://sharedndbucket.s3.us-west-1.amazonaws.com/default-image-home.png'} />
                 </div>
                 <div>{spot.city}, {spot.state ? spot.state : spot.country} </div>
                 <div>${spot.price} night</div>

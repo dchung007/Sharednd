@@ -103,7 +103,14 @@ export const editSpot = (spot) => async (dispatch) => {
   if (response.ok) {
     const editedSpot = await response.json();
     dispatch(actionEditSpot(editedSpot));
-    return editedSpot;
+    return { 'editedSpot': editedSpot };
+  } else if (response.status < 500) {
+    const data = await response.json();
+    if (data.errors) {
+      return data.errors;
+    }
+  } else {
+    return ['An error occurred. Please try again.']
   }
 }
 
@@ -130,7 +137,7 @@ export const addImage = (formData) => async (dispatch) => {
     const image = await response.json();
     dispatch(actionAddImage(image))
     // console.log("-------------------Reached reponse.ok backend:", image, "-------------------")
-    return {'image':image}
+    return { 'image': image }
   } else if (response.status < 500) {
     const data = await response.json();
     if (data.errors) {
