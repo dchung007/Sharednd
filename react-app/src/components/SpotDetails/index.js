@@ -60,11 +60,19 @@ const SpotDetails = () => {
           }
         </div>
         <div className="spot-images">
-          {Object.values(spot.images).map((image, index) => (
-            <div key={image.id}>
-              <img className={`spot-single-image image-${index}`} src={image.imageUrl} />
-            </div>
-          ))}
+          {spot.images[Object.keys(spot.images)[0]] ?
+            Object.values(spot.images).map((image, index) => (
+              <div key={image.id}>
+                <img className={`spot-single-image image-${index}`} src={image.imageUrl} />
+              </div>
+            ))
+            :
+            ['1', '2', '3', '4', '5'].map((image, index) => (
+              <div key={image}>
+                <img className={`spot-single-image image-${index}`} src='https://sharedndbucket.s3.us-west-1.amazonaws.com/default-image-home.png' />
+              </div>
+            ))
+          }
         </div>
 
         <div>

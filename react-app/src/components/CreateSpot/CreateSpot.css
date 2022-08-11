@@ -1,8 +1,15 @@
+.create-spot-container {
+  display: flex;
+  justify-content: center;
+}
+
 form.signup-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 250px;
+  border: solid #FF5A5F 5px;
+  border-radius: 30px;
 }
 
 .signup-form-list {
