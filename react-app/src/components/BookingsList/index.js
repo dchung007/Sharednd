@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteBooking, getUserBookings } from "../../store/bookings";
 import BookingDetails from "../BookingDetails";
 import EditBooking from "../EditBooking";
+import './BookingsList.css'
 
 
 const UserBookingsList = () => {
@@ -19,16 +20,16 @@ const UserBookingsList = () => {
   return (
     bookings ?
       <div>
-        <h2>Bookings List for {sessionUser.name}</h2>
-        {Object.values(bookings).map(booking => (
-          <div key={booking.id}>
-            <div>
+        <h2>Bookings List</h2>
+        <div className="bookings-list">
+          {Object.values(bookings).map(booking => (
+            <div key={booking.id}>
               {/* <button onClick={() => handleDelete(booking.id)}>Cancel reservation</button>
               <EditBooking booking={booking} /> */}
-              <BookingDetails booking={booking}/>
+              <BookingDetails booking={booking} />
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
       :
       <h3>Loading..</h3>

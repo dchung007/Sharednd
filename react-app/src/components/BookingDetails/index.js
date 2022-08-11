@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { format } from "date-fns";
 import { deleteBooking } from "../../store/bookings";
 import EditBooking from "../EditBooking";
+import './BookingDetails.css'
 
 
 const BookingDetails = ({ booking }) => {
@@ -25,10 +26,10 @@ const BookingDetails = ({ booking }) => {
 
 
   return (
-    <div>
+    <div className="booking-container">
       <div>
         <div>
-          <img src={booking.spot.images[0].imageUrl}></img>
+          <img className="booking-image" src={booking.spot.images[0].imageUrl}></img>
         </div>
         <div>
           <div>
@@ -45,8 +46,8 @@ const BookingDetails = ({ booking }) => {
       {
         !showEditBooking ?
           <div>
-            <button onClick={() => setShowEditBooking(true)}>Edit reservation</button>
-            <button onClick={() => handleDelete(booking.id)}>Remove reservation</button>
+            <button className="edit-booking-button" onClick={() => setShowEditBooking(true)}>Edit reservation</button>
+            <button className="edit-booking-button" onClick={() => handleDelete(booking.id)}>Remove reservation</button>
           </div>
           :
           <EditBooking booking={booking} hideForm={() => setShowEditBooking(false)} />

@@ -14,4 +14,11 @@
   border-radius: 15px;
 }
 
-/* .single-spot-container {} */
+.single-spot-container {
+  box-shadow: 5px 5px #FF5A5F;
+  object-fit: cover;
+  border-radius: 15px;
+  padding: 0px 0px 5px 5px;
+}
+
+
