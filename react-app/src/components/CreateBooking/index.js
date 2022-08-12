@@ -13,7 +13,7 @@ const CreateBooking = ({ spot }) => {
   const { spotId } = useParams();
   const [date, setDate] = useState(null);
   const [errors, setErrors] = useState([]);
-  const spotBookings = useSelector(state => state.bookings);
+  const spotBookings = useSelector(state => state.bookings.spotBookings);
   // console.log(date)
 
   useEffect(() => {

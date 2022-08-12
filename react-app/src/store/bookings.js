@@ -1,10 +1,16 @@
-const LOAD_BOOKINGS = 'bookings/LOAD_BOOKINGS'
+const LOAD_USER_BOOKINGS = 'bookings/LOAD_USER_BOOKINGS'
+const LOAD_SPOT_BOOKINGS = 'bookings/LOAD_SPOT_BOOKINGS'
 const ADD_BOOKING = 'bookings/ADD_BOOKING'
 const EDIT_BOOKING = 'bookings/EDIT_BOOKING'
 const DELETE_BOOKING = 'bookings/DELETE_BOOKING'
 
-const actionLoadBookings = (bookings) => ({
-  type: LOAD_BOOKINGS,
+const actionLoadUserBookings = (bookings) => ({
+  type: LOAD_USER_BOOKINGS,
+  bookings
+})
+
+const actionLoadSpotBookings = (bookings) => ({
+  type: LOAD_SPOT_BOOKINGS,
   bookings
 })
 
@@ -23,22 +29,22 @@ const actionDeleteBooking = (bookingId) => ({
   bookingId
 })
 
-export const getSpotBookings = (spotId) => async (dispatch) => {
-  const response = await fetch(`/api/bookings/spot/${spotId}/all`);
-
-  if (response.ok) {
-    const bookings = await response.json()
-    dispatch(actionLoadBookings(bookings))
-    return bookings
-  }
-}
-
 export const getUserBookings = (userId) => async (dispatch) => {
   const response = await fetch(`/api/bookings/user/${userId}/all`);
 
   if (response.ok) {
     const bookings = await response.json()
-    dispatch(actionLoadBookings(bookings))
+    dispatch(actionLoadUserBookings(bookings))
+    return bookings
+  }
+}
+
+export const getSpotBookings = (spotId) => async (dispatch) => {
+  const response = await fetch(`/api/bookings/spot/${spotId}/all`);
+
+  if (response.ok) {
+    const bookings = await response.json()
+    dispatch(actionLoadSpotBookings(bookings))
     return bookings
   }
 }
@@ -96,27 +102,49 @@ export const deleteBooking = (bookingId) => async (dispatch) => {
 
 const bookingsReducer = (state = {}, action) => {
   switch (action.type) {
-    case LOAD_BOOKINGS:
-      const newState1 = {};
+    case LOAD_USER_BOOKINGS:
+      const newState1 = { userBookings: {} };
       action.bookings.bookings.forEach(booking => {
-        newState1[booking.id] = booking
+        newState1.userBookings[booking.id] = booking
       });
       return newState1;
 
-    case ADD_BOOKING:
-      const newState2 = { ...state };
-      newState2[action.newBooking.id] = action.newBooking
+    case LOAD_SPOT_BOOKINGS:
+      const newState2 = { spotBookings: {} };
+      action.bookings.bookings.forEach(booking => {
+        newState2.spotBookings[booking.id] = booking
+      });
       return newState2;
 
-    case EDIT_BOOKING:
+    case ADD_BOOKING:
       const newState3 = { ...state };
-      newState3[action.editedBooking.id] = action.editedBooking
+      if (Object.values(newState3.userBookings).length) {
+        newState3.userBookings[action.newBooking.id] = action.newBooking
+      }
+      if (Object.values(newState3.spotBookings).length) {
+        newState3.spotBookings[action.newBooking.id] = action.newBooking
+      }
       return newState3;
 
-    case DELETE_BOOKING:
+    case EDIT_BOOKING:
       const newState4 = { ...state };
-      delete newState4[action.bookingId]
+      if (Object.values(newState3.userBookings).length) {
+        newState4.userBookings[action.editedBooking.id] = action.editedBooking
+      }
+      if (Object.values(newState3.spotBookings).length) {
+        newState4.spotBookings[action.editedBooking.id] = action.editedBooking
+      }
       return newState4;
+
+    case DELETE_BOOKING:
+      const newState5 = { ...state };
+      if (Object.values(newState3.userBookings).length) {
+        delete newState5.userBookings[action.bookingId]
+      }
+      if (Object.values(newState3.spotBookings).length) {
+        delete newState5.spotBookings[action.bookingId]
+      }
+      return newState5;
 
     default:
       return state;

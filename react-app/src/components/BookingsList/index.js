@@ -9,7 +9,7 @@ import './BookingsList.css'
 const UserBookingsList = () => {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
-  const bookings = useSelector(state => state.bookings)
+  const bookings = useSelector(state => state.bookings.userBookings)
 
   useEffect(() => {
     dispatch(getUserBookings(sessionUser?.id))

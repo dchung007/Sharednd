@@ -11,7 +11,7 @@ const EditBooking = ({ booking, hideForm }) => {
   const dispatch = useDispatch();
   const [date, setDate] = useState(new Date());
   const [errors, setErrors] = useState([]);
-  const spotBookings = useSelector(state => state.bookings);
+  const spotBookings = useSelector(state => state.bookings.spotBookings);
   // console.log(date)
 
   useEffect(() => {
