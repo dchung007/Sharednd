@@ -100,7 +100,7 @@ const CreateBooking = ({ spot }) => {
     <div className="create-booking-container">
       <h1>Create A Booking!</h1>
       <form onSubmit={handleSubmit}>
-        <div className='errors-list'>
+        <div className='errors-list-booking-form'>
           {errors.map((error, ind) => (
             <div key={ind}>{error}</div>
           ))}
