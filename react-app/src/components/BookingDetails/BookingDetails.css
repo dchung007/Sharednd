@@ -5,7 +5,8 @@
   flex-direction: row;
   margin-right: 20px;
   margin-bottom: 20px;
-  height: 200px;
+  min-height: 200px;
+  max-height: fit-content;
 }
 
 .edit-booking-button {

@@ -7,16 +7,31 @@ import { addBooking, editBooking, getSpotBookings } from "../../store/bookings";
 import 'react-calendar/dist/Calendar.css';
 import './EditBooking.css'
 
-const EditBooking = ({ booking, hideForm }) => {
+const EditBooking = ({ spotBookings, booking, hideForm }) => {
   const dispatch = useDispatch();
   const [date, setDate] = useState(new Date());
   const [errors, setErrors] = useState([]);
-  const spotBookings = useSelector(state => state.bookings);
+  // const [spotBookings, setSpotBookings] = useState('');
+  // const spotBookings = useSelector(state => state.bookings);
   // console.log(date)
 
-  useEffect(() => {
-    dispatch(getSpotBookings(booking.spotId))
-  }, [dispatch])
+  // useEffect(() => {
+  //   dispatch(getSpotBookings(booking.spotId))
+  // }, [dispatch])
+
+  // let spotBookings;
+  // fetch(`/api/bookings/spot/${booking.spotId}/all`)
+  //   .then(response => response.json())
+  //   .then(data => {
+  //     console.log(data)
+  //     spotBookings = data.bookings
+  //   })
+
+
+  // useEffect(() => {
+  //   fetchSpotBookings()
+  // }, [dispatch])
+
 
   const isSameDay = (a, b) => {
     return differenceInCalendarDays(a, b) === 0;
@@ -40,8 +55,9 @@ const EditBooking = ({ booking, hideForm }) => {
 
   const tileDisabled = ({ activeStartDate, date, view }) => {
     // const disabledDates = []
+
     let boolDate = false;
-    Object.values(spotBookings).forEach(booking => {
+    spotBookings.forEach(booking => {
       // console.log(booking)
       const validDate = checkDateInRange(booking.startDate, booking.endDate, date);
       if (validDate) {
@@ -63,13 +79,13 @@ const EditBooking = ({ booking, hideForm }) => {
     console.log(date)
 
     const frontErrors = [];
-    if (!date) {
+    if (!date || NaN) {
       frontErrors.push('No dates currently selected. Must select a date.')
       setErrors(frontErrors)
     } else if (isSameDay(date[0], date[1])) {
       frontErrors.push('Can not select same day for both start date and end date.')
       setErrors(frontErrors)
-    } else if (date.length === 1) {
+    } else if (!Array.isArray(date)) {
       frontErrors.push('Please select an end date.')
       setErrors(frontErrors)
     } else if (frontErrors.length) {
@@ -93,19 +109,24 @@ const EditBooking = ({ booking, hideForm }) => {
 
       let updatedBooking = await dispatch(editBooking(editedBooking))
       if (updatedBooking) {
-        console.log('edit was successful!')
+        // console.log('edit was successful!')
+        hideForm()
       }
     }
 
   }
 
   return (
-    <div>
-      <h1>Edit A Booking!</h1>
+    <div className="edit-booking-form">
       <form onSubmit={handleSubmit}>
+        <div className='errors-list'>
+          {errors.map((error, ind) => (
+            <div key={ind}>{error}</div>
+          ))}
+        </div>
         <button className="edit-booking-button" type="submit">Update Reservation</button>
         <button className="edit-booking-button" type="button" onClick={handleCancel}>Cancel</button>
-        <div>
+        <div className="edit-booking-calendar">
           <Calendar
             defaultValue={[new Date(booking.startDate), new Date(booking.endDate)]}
             onChange={setDate}
