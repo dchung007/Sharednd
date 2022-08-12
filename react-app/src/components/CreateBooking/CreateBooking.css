@@ -41,3 +41,8 @@ div.create-booking-button {
   box-shadow: rgb(0 0 0 / 50%) 0px 6px 16px;
   border-radius: 15px;
 }
+
+.errors-list-booking-form {
+  width: 300px;
+  color: red;
+}
