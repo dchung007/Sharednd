@@ -9,17 +9,22 @@
 .spot-images {
   display: flex;
   flex-direction: row;
+  box-shadow: rgb(0 0 0 / 50%) 0px 6px 16px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .spot-single-image {
-  max-width: 270px;
-  max-height: 160px;
+  /* max-width: 270px;
+  max-height: 160px; */
+  width: 240px;
+  height: 200px;
 }
 
-.image-0 {
-  max-width: 560px;
-  max-height: 320px;
-}
+/* .image-0 {
+  width: 400px;
+  height: 200px;
+} */
 
 .create-booking-calendar {
   position: sticky;
@@ -36,4 +41,14 @@
   display: flex;
   flex-direction: column;
   justify-content: left;
+}
+
+.spot-description {
+  box-shadow: rgb(0 0 0 / 50%) 0px 6px 16px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.spot-owner {
+  padding: 10px;
 }

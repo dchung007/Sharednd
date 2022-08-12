@@ -77,10 +77,10 @@ const SpotDetails = () => {
 
 
         <div>
-          <div>
+          <div className="spot-owner">
             Hosted by {spot.owner.username}
           </div>
-          <div>
+          <div className="spot-description">
             <div>
               <h3>About this space</h3>
             </div>
