@@ -1,0 +1,33 @@
+.booking-container {
+  border-radius: 15px;
+  box-shadow: rgb(0 0 0 / 50%) 0px 6px 16px;
+  display: flex;
+  flex-direction: row;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  min-height: 200px;
+  max-height: fit-content;
+}
+
+.edit-booking-button {
+  background-color: #FF5A5F;
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+.booking-image {
+  border-radius: 15px;
+}
+
+.booking-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.booking-info>div {
+  margin-bottom: 5px;
+}

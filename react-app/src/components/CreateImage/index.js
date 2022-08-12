@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { addImage } from "../../store/spots";
-
+import './CreateImage.css'
 
 const CreateImage = () => {
   const dispatch = useDispatch();
@@ -141,7 +141,7 @@ const CreateImage = () => {
   }
 
   return (
-    <div className="image-form">
+    <div className="image-form-container">
       <form onSubmit={handleSubmit} className="image-form">
         <div className='form-title'>
           <h1>

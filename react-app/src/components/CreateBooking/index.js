@@ -11,7 +11,7 @@ const CreateBooking = ({ spot }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { spotId } = useParams();
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState(null);
   const [errors, setErrors] = useState([]);
   const spotBookings = useSelector(state => state.bookings);
   // console.log(date)
@@ -24,64 +24,76 @@ const CreateBooking = ({ spot }) => {
     return differenceInCalendarDays(a, b) === 0;
   }
 
-  const getDatesInRange = (startDate, endDate) => {
-    const date = new Date(startDate);
+  const checkDateInRange = (startDate, endDate, inputDate) => {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    const input = new Date(inputDate);
 
-    const dates = [];
-
-    while (date <= endDate) {
-      // console.log(dates)
-      dates.push(new Date(date));
-      date.setDate(date.getDate() + 1);
+    // console.log(startDate, endDate, inputDate)
+    // console.log(inputDate >= startDate && inputDate <= endDate)
+    // console.log(start, end, input)
+    // console.log(input >= start && input <= end)
+    if (input >= start && input <= end) {
+      return true;
+    } else {
+      return false;
     }
-
-    return dates;
   }
 
+
   const tileDisabled = ({ activeStartDate, date, view }) => {
-    const disabledDates = []
+    // const disabledDates = []
+    let boolDate = false;
     Object.values(spotBookings).forEach(booking => {
-      console.log(booking)
-      const dateRange = getDatesInRange(booking.startDate, booking.endDate);
-      disabledDates.push(...dateRange);
+      // console.log(booking)
+      const validDate = checkDateInRange(booking.startDate, booking.endDate, date);
+      if (validDate) {
+        // disabledDates.push(date);
+        boolDate = true;
+      }
     })
-    console.log(disabledDates)
-    return date <= new Date() || disabledDates.includes(date);
+    // console.log(disabledDates)
+    return date < new Date() - 1 || boolDate
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    console.log(date)
+
     const frontErrors = [];
-    if (isSameDay(date[0], date[1])) {
+    if (!date) {
+      frontErrors.push('No dates currently selected. Must select a date.')
+      setErrors(frontErrors)
+    } else if (isSameDay(date[0], date[1])) {
       frontErrors.push('Can not select same day for both start date and end date.')
-    }
-    if (!Array.isArray(date)) {
+      setErrors(frontErrors)
+    } else if (date.length === 1) {
       frontErrors.push('Please select an end date.')
-    }
-    if (frontErrors.length) {
+      setErrors(frontErrors)
+    } else if (frontErrors.length) {
       setErrors(frontErrors)
       return;
-    }
-
-    const finalPrice = differenceInDays(date[1], date[0]) * spot.price;
-
-    // console.log(format(date[0], 'yyyy-MM-dd'));
-    // console.log(format(date[1], 'yyyy-MM-dd'));
-
-    const newBooking = {
-      spotId,
-      startDate: format(date[0], 'yyyy-MM-dd'),
-      endDate: format(date[1], 'yyyy-MM-dd'),
-      price: finalPrice
-    }
-
-    let createdBooking = await dispatch(addBooking(newBooking))
-    if (createdBooking.newBooking) {
-      history.push(`/users/${createdBooking.newBooking.userId}/profile`)
     } else {
-      setErrors(createdBooking)
-    }
+      const finalPrice = differenceInDays(date[1], date[0]) * spot.price;
 
+      // console.log(format(date[0], 'yyyy-MM-dd'));
+      // console.log(format(date[1], 'yyyy-MM-dd'));
+
+      const newBooking = {
+        spotId,
+        startDate: format(date[0], 'yyyy-MM-dd'),
+        endDate: format(date[1], 'yyyy-MM-dd'),
+        price: finalPrice
+      }
+
+      let createdBooking = await dispatch(addBooking(newBooking))
+      if (createdBooking.newBooking) {
+        history.push(`/users/${createdBooking.newBooking.userId}/profile`)
+      } else {
+        setErrors(createdBooking)
+      }
+    }
   }
 
   return (
@@ -95,8 +107,9 @@ const CreateBooking = ({ spot }) => {
         </div>
         <div className="calendar">
           <Calendar
-            value={date}
+            // value={date}
             onChange={setDate}
+            allowPartialRange={true}
             selectRange={true}
             tileDisabled={tileDisabled}
           />
