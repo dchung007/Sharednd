@@ -48,12 +48,12 @@ const SpotDetails = () => {
           </div>
           {sessionUser && sessionUser.id === spot.ownerId &&
             <div>
-              <div>
-                <Link to={`/spots/${spot.id}/edit`}>
+              <div className="spot-button">
+                <Link to={{ pathname: `/spots/${spot.id}/edit`, state: { spot: spot } }}>
                   Edit
                 </Link>
               </div>
-              <div>
+              <div className="spot-button">
                 <button onClick={e => handleDelete(e)}>Delete</button>
               </div>
             </div>

@@ -15,8 +15,10 @@ import SpotDetails from './components/SpotDetails';
 import EditSpot from './components/EditSpot';
 // import CreateBooking from './components/CreateBooking';
 import UserBookingsList from './components/BookingsList';
+import Footer from './components/Footer';
 // import LoginFormModal from './components/auth/LoginFormModal';
 // import SignupFormModal from './components/auth/SignupFormModal';
+import './App.css'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -36,41 +38,47 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
-      <Switch>
-        {/* <Route path='/login' exact={true}>
+      <body>
+        <Switch>
+          {/* <Route path='/login' exact={true}>
           <LoginFormModal />
         </Route>
         <Route path='/sign-up' exact={true}>
           <SignupFormModal />
         </Route> */}
-        {/* <ProtectedRoute path='/users' exact={true} >
+          {/* <ProtectedRoute path='/users' exact={true} >
           <UsersList />
         </ProtectedRoute> */}
-        <ProtectedRoute path='/users/:userId/profile' exact={true}>
-          <UserBookingsList />
-        </ProtectedRoute>
-        {/* <ProtectedRoute path='/users/:userId' exact={true} >
+          <ProtectedRoute path='/users/:userId/profile' exact={true}>
+            <UserBookingsList />
+          </ProtectedRoute>
+          {/* <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute> */}
-        <ProtectedRoute path='/spots/new' exact={true}>
-          <CreateSpot />
-        </ProtectedRoute>
-        {/* <ProtectedRoute path='/spots/:spotId/bookings/new' exact={true}>
+          <ProtectedRoute path='/spots/new' exact={true}>
+            <CreateSpot />
+          </ProtectedRoute>
+          {/* <ProtectedRoute path='/spots/:spotId/bookings/new' exact={true}>
           <CreateBooking/>
         </ProtectedRoute> */}
-        <ProtectedRoute path='/spots/:spotId/images/new' exact={true}>
-          <CreateImage />
-        </ProtectedRoute>
-        <ProtectedRoute path='/spots/:spotId/edit' exact={true}>
-          <EditSpot />
-        </ProtectedRoute>
-        <Route path='/spots/:spotId' exact={true}>
-          <SpotDetails />
-        </Route>
-        <Route path='/' exact={true} >
-          <SpotsList />
-        </Route>
-      </Switch>
+          <ProtectedRoute path='/spots/:spotId/images/new' exact={true}>
+            <CreateImage />
+          </ProtectedRoute>
+          <ProtectedRoute path='/spots/:spotId/edit' exact={true}>
+            <EditSpot />
+          </ProtectedRoute>
+          <Route path='/spots/:spotId' exact={true}>
+            <SpotDetails />
+          </Route>
+          <Route path='/' exact={true} >
+            <SpotsList />
+          </Route>
+        </Switch>
+      </body>
+
+      <footer>
+        <Footer />
+      </footer>
     </BrowserRouter>
   );
 }

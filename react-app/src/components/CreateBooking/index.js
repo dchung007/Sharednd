@@ -105,6 +105,9 @@ const CreateBooking = ({ spot }) => {
             <div key={ind}>{error}</div>
           ))}
         </div>
+        <div className="create-booking-button">
+          <button className="create-booking-button" type="submit">Reserve</button>
+        </div>
         <div className="calendar">
           <Calendar
             // value={date}
@@ -113,9 +116,6 @@ const CreateBooking = ({ spot }) => {
             selectRange={true}
             tileDisabled={tileDisabled}
           />
-        </div>
-        <div>
-          <button type="submit">Reserve</button>
         </div>
       </form>
     </div>

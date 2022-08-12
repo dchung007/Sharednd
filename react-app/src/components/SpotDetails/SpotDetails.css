@@ -52,3 +52,14 @@
 .spot-owner {
   padding: 10px;
 }
+
+.spot-button {
+  width: 55px;
+  height: 30px;
+  background: #FF5A5F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
