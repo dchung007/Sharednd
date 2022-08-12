@@ -1,17 +1,27 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
-import { editSpot } from "../../store/spots";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory, useParams, useLocation } from "react-router-dom";
+import { editSpot, getSpots } from "../../store/spots";
 import './EditSpot.css'
 
 const EditSpot = () => {
+  const location = useLocation();
+  const spot = location.state?.spot;
   const { spotId } = useParams();
   const dispatch = useDispatch();
   const history = useHistory();
-  const [name, setName] = useState('');
-  const [price, setPrice] = useState(0);
-  const [description, setDescription] = useState('');
+  // const spots = useSelector(state => state.spots);
+  // const spot = spots[spotId];
+  const [name, setName] = useState(spot.name);
+  const [price, setPrice] = useState(spot.price);
+  const [description, setDescription] = useState(spot.description);
   const [errors, setErrors] = useState([])
+
+  // useEffect(() => {
+  //   dispatch(getSpots())
+  // }, [dispatch, spot])
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -51,6 +61,7 @@ const EditSpot = () => {
             </label>
             <input
               className="field-signup"
+              value={name}
               id="name"
               name="name"
               type="text"
@@ -63,6 +74,7 @@ const EditSpot = () => {
             </label>
             <input
               className="field-signup"
+              value={price}
               id="price"
               name="price"
               type="text"
@@ -75,6 +87,7 @@ const EditSpot = () => {
             </label>
             <input
               className="field-signup"
+              value={description}
               id="description"
               name="description"
               type="text"
@@ -83,7 +96,7 @@ const EditSpot = () => {
           </li>
           <li>
             <button
-            className="signup-button"
+              className="signup-button"
               type="submit"
             >Submit</button>
           </li>

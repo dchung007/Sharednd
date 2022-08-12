@@ -76,7 +76,7 @@ const EditBooking = ({ spotBookings, booking, hideForm }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(date)
+    // console.log(date)
 
     const frontErrors = [];
     if (!date || NaN) {
@@ -94,7 +94,7 @@ const EditBooking = ({ spotBookings, booking, hideForm }) => {
     } else {
       const finalPrice = differenceInDays(date[1], date[0]) * booking.spot.price;
 
-      console.log(finalPrice)
+      // console.log(finalPrice)
 
       // console.log(format(date[0], 'yyyy-MM-dd'));
       // console.log(format(date[1], 'yyyy-MM-dd'));

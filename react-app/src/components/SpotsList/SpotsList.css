@@ -23,3 +23,25 @@
 .spot-list-spot-info {
   padding: 10px;
 }
+
+.splash-banner {
+  display: flex;
+  justify-content: center;
+  width: 1200px;
+}
+
+.splash-banner-img {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  box-shadow: rgb(0 0 0 / 50%) 0px 6px 16px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+}
+
+.spots-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
