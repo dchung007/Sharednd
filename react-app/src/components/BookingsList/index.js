@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteBooking, getUserBookings } from "../../store/bookings";
+import { getUserBookings } from "../../store/bookings";
 import BookingDetails from "../BookingDetails";
-import EditBooking from "../EditBooking";
+import { ReactComponent as WavingHand } from '../../images/waving-hand.svg';
 import './BookingsList.css'
 
 
@@ -34,8 +34,10 @@ const UserBookingsList = () => {
             ))
             :
             <div className="no-bookings">
-              <div>
-                No Bookings yet
+              <div className="no-bookings-left">
+                <WavingHand />
+                <span className="no-trips-text">No trips booked... yet!</span>
+                <span>Time to dust off your bags and start planning your next adventure</span>
               </div>
               <div>
                 <img className="no-bookings-image" src='https://sharedndbucket.s3.us-west-1.amazonaws.com/bookings-default-image.png' />

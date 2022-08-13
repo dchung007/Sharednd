@@ -1,7 +1,7 @@
 .bookings-list-container {
-display: flex;
-flex-direction: column;
-justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .bookings-list {
@@ -14,9 +14,28 @@ justify-content: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  box-shadow: rgb(0 0 0 / 8%) 2px 2px 100px;
+  border-radius: 10px;
 }
 
 .no-bookings-image {
-  width: 1000px;
-  height: 350px;
+  max-width: 1085px;
+  max-height: 330px;
+  min-width: 700px;
+  min-height: 285px;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.no-bookings-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px;
+}
+
+.no-trips-text {
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }

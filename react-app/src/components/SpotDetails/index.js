@@ -39,12 +39,9 @@ const SpotDetails = () => {
     spot ?
       <div className="spot-details-container">
         <div className="spot-heading">
-          <h1>Spot Details</h1>
+          {/* <h1>Spot Details</h1> */}
           <div className="spot-name">
             {spot.name}
-          </div>
-          <div>
-            ${spot.price}
           </div>
           {sessionUser && sessionUser.id === spot.ownerId &&
             <div>

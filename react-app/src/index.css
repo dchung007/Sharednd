@@ -7,6 +7,7 @@ img {
 body * {
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
   word-wrap: break-word;
+  color: #484848
 }
 
 button {
@@ -17,8 +18,8 @@ button {
   padding: 0px;
 }
 
-.errors-list {
-  color: red;
+.errors-list *{
+  color: red !important;
 }
 
 a:link {
