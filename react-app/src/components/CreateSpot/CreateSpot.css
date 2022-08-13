@@ -34,7 +34,7 @@ form.create-spot-form {
 }
 
 .create-spot-form-list input[type=text],
-.create-spot-form-list input[type=password] {
+.create-spot-form-list input[type=number] {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

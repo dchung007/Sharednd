@@ -18,6 +18,9 @@ const SpotsList = () => {
         <div className="splash-banner">
           <img className="splash-banner-img" src='https://sharedndbucket.s3.us-west-1.amazonaws.com/splash-banner3.png' />
         </div>
+        <div className="splash-text">
+          Welcome to Sharednd, a site where you can host your homes and book other people's homes all around the world!
+        </div>
         <div className="spot-list-container">
           {
             Object.values(spots).map(spot => (
@@ -26,7 +29,9 @@ const SpotsList = () => {
                   <div>
                     <img
                       className="spot-list-images"
-                      src={spot.images[Object.keys(spot.images)[0]] ? spot.images[Object.keys(spot.images)[0]].imageUrl : 'https://sharedndbucket.s3.us-west-1.amazonaws.com/default-image-home.png'} />
+                      src={spot.images[Object.keys(spot.images)[0]] ? spot.images[Object.keys(spot.images)[0]].imageUrl : 'https://sharedndbucket.s3.us-west-1.amazonaws.com/default-image-home.png'}
+                      onError={(e) => { e.target.onerror = null; e.target.src = "https://sharedndbucket.s3.us-west-1.amazonaws.com/default-image-home.png" }}
+                    />
                   </div>
                   <div className="spot-list-spot-info">
                     <div>{spot.city}, {spot.state ? spot.state : spot.country} </div>

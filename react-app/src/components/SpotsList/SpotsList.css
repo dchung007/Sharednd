@@ -18,6 +18,7 @@
   box-shadow: rgb(0 0 0 / 50%) 0px 6px 16px;
   object-fit: cover;
   border-radius: 15px;
+  width: 240px;
 }
 
 .spot-list-spot-info {
@@ -44,4 +45,12 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+.splash-text {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  box-shadow: rgb(0 0 0 / 50%) 0px 6px 16px;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 25px;
 }

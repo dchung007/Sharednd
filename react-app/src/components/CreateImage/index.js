@@ -52,6 +52,15 @@ const CreateImage = () => {
 
     e.preventDefault();
 
+    if (!image1 || !image2 || !image3 || !image4 || !image5) {
+      setTotalErrors(['All images are required.'])
+      return
+    }
+
+
+
+
+
     // Image 1 submission
     const formData1 = new FormData();
     formData1.append("spotId", spotId)
@@ -66,7 +75,7 @@ const CreateImage = () => {
     }
     else {
       setImageLoading1(false);
-      errors.push(`image1: ${createdImage1}`)
+      errors.push(`Image 1: ${createdImage1}`)
     }
 
     // Image 2 submission
@@ -82,7 +91,7 @@ const CreateImage = () => {
     }
     else {
       setImageLoading2(false);
-      errors.push(`image2: ${createdImage2}`)
+      errors.push(`Image 2: ${createdImage2}`)
     }
 
     // Image 3 submission
@@ -98,7 +107,7 @@ const CreateImage = () => {
     }
     else {
       setImageLoading3(false);
-      errors.push(`image3: ${createdImage3}`)
+      errors.push(`Image 3: ${createdImage3}`)
     }
 
     // Image 4 submission
@@ -114,7 +123,7 @@ const CreateImage = () => {
     }
     else {
       setImageLoading4(false);
-      errors.push(`image4: ${createdImage4}`)
+      errors.push(`Image 4: ${createdImage4}`)
     }
 
     // Image 5 submission
@@ -130,7 +139,7 @@ const CreateImage = () => {
     }
     else {
       setImageLoading5(false);
-      errors.push(`image5: ${createdImage5}`)
+      errors.push(`Image 5: ${createdImage5}`)
     }
 
     if (createdImage1.image && createdImage2.image && createdImage3.image && createdImage4.image && createdImage5.image) {
@@ -156,6 +165,7 @@ const CreateImage = () => {
             <div key={ind}>{error}</div>
           ))}
         </div>
+        {(imageLoading1 || imageLoading2 || imageLoading3 || imageLoading4 || imageLoading5) && <div>Loading...</div>}
         <ul className="image-form-list">
           <li>
             <label htmlFor="create-image-file-1">Image 1<span className="required">*</span>:</label>
@@ -215,7 +225,6 @@ const CreateImage = () => {
           </li>
         </ul>
       </form>
-      {(imageLoading1 || imageLoading2 || imageLoading3 || imageLoading4 || imageLoading5) && <p>Loading...</p>}
     </div>
 
   )

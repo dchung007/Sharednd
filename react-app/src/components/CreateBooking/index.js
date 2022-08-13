@@ -24,6 +24,8 @@ const CreateBooking = ({ spot }) => {
     return differenceInCalendarDays(a, b) === 0;
   }
 
+
+
   const checkDateInRange = (startDate, endDate, inputDate) => {
     const start = new Date(startDate);
     const end = new Date(endDate);
