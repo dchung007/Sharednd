@@ -11,8 +11,7 @@ div.footer {
   display: flex;
   justify-content: space-evenly;
   padding: 10px 10px 0px 10px;
-  background: #FF5A5F;
-  color: white;
+  background: #F7F7F7;
   align-items: center;
   /* position: fixed;
   left: 0;
@@ -39,9 +38,9 @@ img.logo {
 } */
 
 div.author-div {
-  background: #FF5A5F;
+  background: #F7F7F7;
   text-align: center;
   padding-bottom: 5px;
-  color: white;
+  /* color: white; */
   /* font-weight: 900; */
 }

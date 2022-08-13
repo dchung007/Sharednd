@@ -3,6 +3,10 @@
   height: 31px;
 }
 
+.full-logo * {
+  color: #FF5A5F !important;
+}
+
 .full-logo>a {
   display: flex;
   flex-direction: row;
@@ -23,6 +27,7 @@ a {
   max-width: 1250px;
   height: 60px;
   align-items: center;
+  box-shadow: rgb(0 0 0 / 8%) 0px 1px 1px;
 }
 
 .navbar-right {
