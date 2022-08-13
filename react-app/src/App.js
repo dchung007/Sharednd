@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 // import LoginForm from './components/auth/LoginFormModal/LoginForm';
 // import SignUpForm from './components/auth/SignUpFormModal/SignUpForm';
@@ -72,6 +72,11 @@ function App() {
           </Route>
           <Route path='/' exact={true} >
             <SpotsList />
+          </Route>
+          <Route>
+            <h1> 404 Error Page Not Found.
+              <Link to='/'> Click here to go to back to home </Link>
+            </h1>
           </Route>
         </Switch>
       </body>

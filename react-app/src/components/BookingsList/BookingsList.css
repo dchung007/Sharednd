@@ -1,4 +1,22 @@
+.bookings-list-container {
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
 .bookings-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+.no-bookings {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.no-bookings-image {
+  width: 1000px;
+  height: 350px;
 }

@@ -62,8 +62,12 @@ const SpotDetails = () => {
         <div className="spot-images">
           {spot.images[Object.keys(spot.images)[0]] ?
             Object.values(spot.images).map((image, index) => (
+              index < 5 &&
               <div key={image.id}>
-                <img className={`spot-single-image image-${index}`} src={image.imageUrl} />
+                <img
+                  className={`spot-single-image image-${index}`}
+                  onError={(e) => { e.target.onerror = null; e.target.src = "https://sharedndbucket.s3.us-west-1.amazonaws.com/default-image-home.png" }}
+                  src={image.imageUrl} />
               </div>
             ))
             :
