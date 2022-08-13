@@ -10,12 +10,16 @@
   max-width: 400px;
   padding: 10px;
   font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.signup-form-list li {
+.signup-form-list div {
   padding: 0;
   display: block;
-  list-style: none;
+  /* list-style: none; */
   margin: 10px 0 0 0;
 }
 
@@ -79,7 +83,7 @@ button.signup-button {
   font: bold 15px arial, sans-serif;
   text-shadow: none;
   border-radius: 15px;
-  margin-left: 30px;
+  margin-left: 0px !important;
 }
 
 
@@ -103,7 +107,7 @@ button.menu-buttons {
   font: bold 15px arial, sans-serif;
   text-shadow: none;
   border-radius: 15px;
-  margin-left: 30px !important;
+  margin-left: 0px !important;
   margin-bottom: 10px;
 }
 

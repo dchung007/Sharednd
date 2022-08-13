@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { Redirect } from 'react-router-dom';
 import { login, signUp } from '../../../store/session';
 import './SignupForm.css'
 
@@ -66,13 +65,13 @@ const SignUpForm = ({ hideModal }) => {
             Sign up now!
           </h4>
         </div>
-        <ul className='signup-form-list'>
+        <div className='signup-form-list'>
           <div className='errors-list'>
             {errors.map((error, ind) => (
               <div key={ind}>{error}</div>
             ))}
           </div>
-          <li>
+          <div>
             <label>Username<span className="required">*</span></label>
             <input
               className="field-signup"
@@ -81,8 +80,8 @@ const SignUpForm = ({ hideModal }) => {
               onChange={updateUsername}
               value={username}
             ></input>
-          </li>
-          <li>
+          </div>
+          <div>
             <label>Full Name<span className="required">*</span></label>
             <input
               className="field-signup"
@@ -91,8 +90,8 @@ const SignUpForm = ({ hideModal }) => {
               onChange={updateName}
               value={name}
             ></input>
-          </li>
-          <li>
+          </div>
+          <div>
             <label>Email<span className="required">*</span></label>
             <input
               className="field-signup"
@@ -101,8 +100,8 @@ const SignUpForm = ({ hideModal }) => {
               onChange={updateEmail}
               value={email}
             ></input>
-          </li>
-          <li>
+          </div>
+          <div>
             <label>Password<span className="required">*</span></label>
             <input
               className="field-signup"
@@ -111,8 +110,8 @@ const SignUpForm = ({ hideModal }) => {
               onChange={updatePassword}
               value={password}
             ></input>
-          </li>
-          <li>
+          </div>
+          <div>
             <label>Repeat Password<span className="required">*</span></label>
             <input
               className="field-signup"
@@ -122,17 +121,17 @@ const SignUpForm = ({ hideModal }) => {
               value={repeatPassword}
               required={true}
             ></input>
-          </li>
-          <li>
+          </div>
+          <div>
             <button className='signup-button' type='submit'>Sign Up</button>
-          </li>
-          <li>
+          </div>
+          <div>
             <button
               type='button'
               className='demo-button-signup'
               onClick={demoLogin}>Log in with Demo User</button>
-          </li>
-        </ul>
+          </div>
+        </div>
       </form>
     </div>
   );

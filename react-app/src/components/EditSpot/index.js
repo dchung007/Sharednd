@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { useDispatch} from "react-redux";
 import { useHistory, useParams, useLocation } from "react-router-dom";
-import { editSpot, getSpots } from "../../store/spots";
+import { editSpot} from "../../store/spots";
 import './EditSpot.css'
 
 const EditSpot = () => {

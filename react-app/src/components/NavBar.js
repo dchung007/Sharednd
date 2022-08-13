@@ -6,7 +6,6 @@ import { ReactComponent as Logo } from '../images/airbnb-logo.svg';
 import { ReactComponent as DropdownDash } from '../images/navbar-dash.svg';
 import { ReactComponent as ProfilePic } from '../images/default-profile-pic.svg';
 import sharedndLogo from '../images/sharednd-logo-2.png'
-import defaultProfilePic from '../images/default-user-profile-pic.png';
 import './NavBar.css'
 import Dropdown from './Dropdown';
 
