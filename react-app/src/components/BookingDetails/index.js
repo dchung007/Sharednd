@@ -43,7 +43,11 @@ const BookingDetails = ({ booking }) => {
   return (
     <div className="booking-container">
       <div>
-        <img className="booking-image" src={booking.spot.images[0].imageUrl}></img>
+        <img
+          className="booking-image"
+          src={booking.spot.images[0] ? booking.spot.images[0].imageUrl : "https://sharedndbucket.s3.us-west-1.amazonaws.com/default-image-home.png"}
+          onError={(e) => { e.target.onerror = null; e.target.src = "https://sharedndbucket.s3.us-west-1.amazonaws.com/default-image-home.png" }}
+        ></img>
       </div>
 
       {
@@ -55,6 +59,7 @@ const BookingDetails = ({ booking }) => {
             <div>
               Hosted by {booking.spot.owner.username}
             </div>
+            <div>Total price: ${booking.price}</div>
             <div>
               Dates: {newStartDate} - {newEndDate}
             </div>

@@ -78,7 +78,14 @@ export const editBooking = (booking) => async (dispatch) => {
   if (response.ok) {
     const booking = await response.json()
     dispatch(actionEditBooking(booking))
-    return booking
+    return { 'editedBooking': booking }
+  } else if (response.status < 500) {
+    const data = await response.json();
+    if (data.errors) {
+      return data.errors;
+    }
+  } else {
+    return ['An error occurred. Please try again.']
   }
 }
 

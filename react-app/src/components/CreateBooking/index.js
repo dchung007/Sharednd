@@ -15,6 +15,25 @@ const CreateBooking = ({ spot }) => {
   const [errors, setErrors] = useState([]);
   const spotBookings = useSelector(state => state.bookings);
   // console.log(date)
+  // console.log(spotBookings)
+  const spotBookingsArr = Object.values(spotBookings)
+  // console.log(spotBookingsArr)
+
+  useEffect(() => {
+    // console.log(date)
+    if (date && date.length === 2) {
+      for (let i = 0; i < spotBookingsArr.length; i++) {
+        if (new Date(date[0]) < new Date(spotBookingsArr[i].startDate) && new Date(date[1]) > new Date(spotBookingsArr[i].endDate)) {
+          setErrors(['Attempted booking date range contains existing booking.'])
+          return;
+        }
+      }
+      setErrors([])
+    } else {
+      setErrors([])
+    }
+  }, [date])
+
 
   useEffect(() => {
     dispatch(getSpotBookings(spotId))
@@ -64,7 +83,9 @@ const CreateBooking = ({ spot }) => {
     console.log(date)
 
     const frontErrors = [];
-    if (!date) {
+    if (errors.length) {
+      return;
+    } else if (!date) {
       frontErrors.push('No dates currently selected. Must select a date.')
       setErrors(frontErrors)
     } else if (isSameDay(date[0], date[1])) {

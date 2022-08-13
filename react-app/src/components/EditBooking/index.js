@@ -7,30 +7,54 @@ import { addBooking, editBooking, getSpotBookings } from "../../store/bookings";
 import 'react-calendar/dist/Calendar.css';
 import './EditBooking.css'
 
+// spotBookings,
 const EditBooking = ({ spotBookings, booking, hideForm }) => {
   const dispatch = useDispatch();
   const [date, setDate] = useState(new Date());
   const [errors, setErrors] = useState([]);
   // const [spotBookings, setSpotBookings] = useState('');
   // const spotBookings = useSelector(state => state.bookings);
-  // console.log(date)
-
   // useEffect(() => {
   //   dispatch(getSpotBookings(booking.spotId))
   // }, [dispatch])
 
   // let spotBookings;
-  // fetch(`/api/bookings/spot/${booking.spotId}/all`)
-  //   .then(response => response.json())
-  //   .then(data => {
-  //     console.log(data)
-  //     spotBookings = data.bookings
-  //   })
+  // const fetchSpotBookings = () => {
+  //   fetch(`/api/bookings/spot/${booking.spotId}/all`)
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       console.log(data)
+  //       // spotBookings = data.bookings
+  //       setSpotBookings(spotBookings)
+  //     })
 
+  // }
 
   // useEffect(() => {
   //   fetchSpotBookings()
-  // }, [dispatch])
+  // }, [dispatch, spotBookings])
+
+  const spotBookingsArr = [];
+  spotBookings.forEach((spotBooking, index) => {
+    if (booking.id !== spotBooking.id) {
+      spotBookingsArr.push(spotBooking)
+    }
+  })
+
+  useEffect(() => {
+    // console.log(date)
+    if (date && date.length === 2) {
+      for (let i = 0; i < spotBookingsArr.length; i++) {
+        if (new Date(date[0]) < new Date(spotBookingsArr[i].startDate) && new Date(date[1]) > new Date(spotBookingsArr[i].endDate)) {
+          setErrors(['Attempted booking date range contains existing booking.'])
+          return;
+        }
+      }
+      setErrors([])
+    } else {
+      setErrors([])
+    }
+  }, [date])
 
 
   const isSameDay = (a, b) => {
@@ -57,7 +81,7 @@ const EditBooking = ({ spotBookings, booking, hideForm }) => {
     // const disabledDates = []
 
     let boolDate = false;
-    spotBookings.forEach(booking => {
+    spotBookingsArr.forEach(booking => {
       // console.log(booking)
       const validDate = checkDateInRange(booking.startDate, booking.endDate, date);
       if (validDate) {
@@ -79,7 +103,9 @@ const EditBooking = ({ spotBookings, booking, hideForm }) => {
     // console.log(date)
 
     const frontErrors = [];
-    if (!date || NaN) {
+    if (errors.length) {
+      return;
+    } else if (!date || NaN) {
       frontErrors.push('No dates currently selected. Must select a date.')
       setErrors(frontErrors)
     } else if (isSameDay(date[0], date[1])) {
@@ -108,9 +134,11 @@ const EditBooking = ({ spotBookings, booking, hideForm }) => {
       }
 
       let updatedBooking = await dispatch(editBooking(editedBooking))
-      if (updatedBooking) {
+      if (updatedBooking.editedBooking) {
         // console.log('edit was successful!')
         hideForm()
+      } else {
+        setErrors(updatedBooking)
       }
     }
 
