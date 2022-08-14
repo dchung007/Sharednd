@@ -21,42 +21,35 @@ https://github.com/dchung007/sharednd/wiki
 ### Register/Sign-in
 Users can register an account on Instagram with a unique username, name, email and a password of their choosing. They can also sign in with their created email and password. If sign-in credentials are incorrect, error messages will alert the user to try again.
 
-![Screen Shot 2022-07-27 at 3 45 50 PM](https://user-images.githubusercontent.com/84115420/181385361-2db4b5ac-0e58-4e3c-8519-7a04c8eb1e82.png)
+![Screen Shot 2022-08-13 at 5 57 57 PM](https://user-images.githubusercontent.com/84115420/184518188-212d5964-7eaf-4bc5-8158-ffd90ddc76fd.png)
 
-![Screen Shot 2022-07-27 at 3 42 25 PM](https://user-images.githubusercontent.com/84115420/181385374-ded2096f-e4eb-4313-ad70-ca76a4edb2eb.png)
-
+![Screen Shot 2022-08-13 at 5 59 29 PM](https://user-images.githubusercontent.com/84115420/184518192-9bcc6a64-2a98-4f55-a1b2-431433563581.png)
 
 
 ### View Spot Listings
 Any user, logged in or not, can view the spot listings page.
 
-![Screen Shot 2022-07-27 at 3 40 59 PM](https://user-images.githubusercontent.com/84115420/181387347-8dfd8fa3-a81d-4210-9d43-fbdc186c02f3.png)
+![Screen Shot 2022-08-13 at 5 48 14 PM](https://user-images.githubusercontent.com/84115420/184518196-5ba1ec26-ba19-4926-972a-73d515349a78.png)
 
 
 ## View Specific Spot Details
 Any user, logged in or not, can view a specific spot's details page.
 
-![Screen Shot 2022-07-27 at 3 41 13 PM](https://user-images.githubusercontent.com/84115420/181385625-8f32a70c-04d0-47af-ae45-85d116578bc0.png)
-
+![Screen Shot 2022-08-13 at 5 56 26 PM](https://user-images.githubusercontent.com/84115420/184518201-9c8d823e-826f-4270-88a3-378119d1eb11.png)
 
 
 ### Creating, editing, and deleting Spots
 All logged-in users can create their own spots. They can also only edit and delete their spots.
 
-![Screen Shot 2022-07-27 at 3 55 42 PM](https://user-images.githubusercontent.com/84115420/181386385-44556506-c452-491c-8468-2984824ecc3e.png)
+![Screen Shot 2022-08-13 at 5 53 07 PM](https://user-images.githubusercontent.com/84115420/184518219-4f756fe6-3473-46d1-baf0-858a053eebfb.png)
 
-![Screen Shot 2022-07-28 at 7 49 06 AM](https://user-images.githubusercontent.com/84115420/181567052-a1e189bf-1525-43a7-ac01-a28d360e4ab2.png)
-
-![Screen Shot 2022-07-28 at 7 53 56 AM](https://user-images.githubusercontent.com/84115420/181568600-3444b4a8-dff5-4930-ac37-5ef288cdf4fb.png)
+![Screen Shot 2022-08-13 at 6 00 44 PM](https://user-images.githubusercontent.com/84115420/184518221-bf2f1445-d361-4a90-aa33-30d287d8c094.png)
 
 
 ### Creating, viewing, editing and deleting Bookings
 All logged-in users can create a booking on any spot. They can also edit or delete their own bookings.
 
-![Screen Shot 2022-07-28 at 7 52 27 AM](https://user-images.githubusercontent.com/84115420/181568302-62a1f787-9b45-4b00-a801-12e28139238a.png)
-
-![Screen Shot 2022-07-28 at 7 59 31 AM](https://user-images.githubusercontent.com/84115420/181570874-bbdeb4a8-1abf-4323-8eab-20041d116fab.png)
-
+![Screen Shot 2022-08-13 at 5 55 08 PM](https://user-images.githubusercontent.com/84115420/184518215-827ed79f-f7fa-40cd-9731-fdcc09a17e2c.png)
 
 
 ## Future features to implement
