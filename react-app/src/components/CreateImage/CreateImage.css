@@ -108,7 +108,7 @@ button.menu-buttons {
 div.form-title {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-align: center;
-  width: 280px !important;
+  width: 250px !important;
 }
 
 .errors-list {
