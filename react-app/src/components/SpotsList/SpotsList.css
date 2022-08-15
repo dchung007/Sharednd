@@ -2,8 +2,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   max-width: 1600px;
+  /* min-width: 800px; */
   place-items: center;
   gap: 30px 10px;
+  /* overflow-x: auto; */
 }
 
 .spot-list-images {
@@ -28,7 +30,8 @@
 .splash-banner {
   display: flex;
   justify-content: center;
-  width: 1200px;
+  /* min-width: 600px; */
+  max-width: 1200px;
 }
 
 .splash-banner-img {
@@ -45,6 +48,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  margin: auto;
 }
 
 .splash-text {
