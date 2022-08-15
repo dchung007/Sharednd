@@ -24,7 +24,7 @@ a {
   justify-content: space-between;
   padding-left: 20px;
   padding-right: 20px;
-  max-width: 1250px;
+  /* max-width: 1250px; */
   height: 60px;
   align-items: center;
   box-shadow: rgb(0 0 0 / 8%) 0px 1px 1px;
