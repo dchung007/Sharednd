@@ -28,7 +28,7 @@ export const getSpotReviews = (spotId) => async (dispatch) => {
 
   if (response.ok) {
     const reviews = await response.json()
-    dispatch(actionLoadBookings(reviews))
+    dispatch(actionLoadReviews(reviews))
     return reviews
   }
 }
@@ -44,7 +44,7 @@ export const addReview = (review) => async (dispatch) => {
 
   if (response.ok) {
     const review = await response.json()
-    dispatch(actionAddBooking(review))
+    dispatch(actionAddReview(review))
     return { 'newReview': review }
   } else if (response.status < 500) {
     const data = await response.json();
@@ -67,7 +67,7 @@ export const editReview = (review) => async (dispatch) => {
 
   if (response.ok) {
     const review = await response.json()
-    dispatch(actionEditBooking(review))
+    dispatch(actionEditReview(review))
     return { 'editedReview': review }
   } else if (response.status < 500) {
     const data = await response.json();
