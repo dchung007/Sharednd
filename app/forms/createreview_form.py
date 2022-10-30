@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import IntegerField, StringField
-from wtforms.validators import DataRequired, InputRequired
+from wtforms.validators import DataRequired, InputRequired, Length
 
 class CreateReviewForm(FlaskForm):
     spotId = IntegerField('spotId', validators=[DataRequired()])
