@@ -7,19 +7,14 @@ import './CreateReview.css'
 const CreateReview = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const [name, setName] = useState('');
-  const [address, setAddress] = useState('');
-  const [city, setCity] = useState('');
-  const [state, setState] = useState('');
-  const [country, setCountry] = useState('');
-  const [price, setPrice] = useState(0);
-  const [description, setDescription] = useState('');
+  const [rating, setRating] = useState(0);
+  const [review, setReview] = useState('');
   const [errors, setErrors] = useState([])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const newSpot = {
+    const newReview = {
       name,
       address,
       city,
