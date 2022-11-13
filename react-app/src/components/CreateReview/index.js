@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
-import { add } from "../../store/spots";
+import { addReview } from "../../store/reviews";
 import './CreateReview.css'
 
 const CreateReview = () => {
@@ -15,20 +15,15 @@ const CreateReview = () => {
     e.preventDefault()
 
     const newReview = {
-      name,
-      address,
-      city,
-      state,
-      country,
-      price,
-      description
+      rating,
+      review
     }
 
-    let createdSpot = await dispatch(addSpot(newSpot))
-    if (createdSpot.newSpot) {
-      history.push(`/spots/${createdSpot.newSpot.id}/images/new`)
+    let createdReview = await dispatch(addReview(newReview))
+    if (createdReview.newReview) {
+      history.push(`/spots/${createdSpot.newSpot.id}/reviews/new`)
     } else {
-      setErrors(createdSpot)
+      setErrors(createdReview)
     }
   }
 
@@ -38,7 +33,7 @@ const CreateReview = () => {
       <form className='create-spot-form' onSubmit={handleSubmit}>
         <div className='form-title'>
           <h1>
-            Host your home now!
+            How was your stay?
           </h1>
         </div>
         <ul className='create-spot-form-list'>
@@ -60,81 +55,31 @@ const CreateReview = () => {
             />
           </li>
           <li>
-            <label htmlFor="address">
-              Address:
+            <label htmlFor="rating">
+              Rating:<span className="required">*</span>
             </label>
-            <input
+            <select
               className="field-create-spot"
-              id="address"
-              name="address"
-              type="text"
-              placeholder="111 Smith Ave"
-              onChange={e => setAddress(e.target.value)}
+              id="rating"
+              name="rating"
+              onChange={e => setRating(e.target.value)}
             />
           </li>
           <li>
-            <label htmlFor="city">
-              City:<span className="required">*</span>
+            <label htmlFor="review">
+              Review:<span className="required">*</span>
             </label>
             <input
               className="field-create-spot"
-              id="city"
-              name="city"
+              id="review"
+              name="review"
               type="text"
-              onChange={e => setCity(e.target.value)}
-            />
-          </li>
-          <li>
-            <label htmlFor="state">
-              State/Province:
-            </label>
-            <input
-              className="field-create-spot"
-              id="state"
-              name="state"
-              type="text"
-              onChange={e => setState(e.target.value)}
-            />
-          </li>
-          <li>
-            <label htmlFor="country">
-              Country:<span className="required">*</span>
-            </label>
-            <input
-              className="field-create-spot"
-              id="country"
-              name="country"
-              type="text"
-              onChange={e => setCountry(e.target.value)}
-            />
-          </li>
-          <li>
-            <label htmlFor="price">
-              Price:<span className="required">*</span>
-            </label>
-            <input
-              className="field-create-spot"
-              id="price"
-              name="price"
-              type="text"
-              onChange={e => setPrice(e.target.value)}
-            />
-          </li>
-          <li>
-            <label htmlFor="description">
-              Description:<span className="required">*</span>
-            </label>
-            <input
-              className="field-create-spot"
-              id="description"
-              name="description"
-              type="text"
-              onChange={e => setDescription(e.target.value)}
+              onChange={e => setReview(e.target.value)}
             />
           </li>
           <li>
             <button
-            className="create-spot-button"
+              className="create-spot-button"
               type="submit"
             >Submit</button>
           </li>
