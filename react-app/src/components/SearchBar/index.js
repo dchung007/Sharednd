@@ -30,7 +30,7 @@ const SearchBar = () => {
       setSearchInput(searchWord)
       setDropdown(false)
     }
-  }
+  } 
 
   const clickResult = () => {
     setDropdown(false);
