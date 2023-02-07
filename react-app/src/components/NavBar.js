@@ -8,7 +8,6 @@ import { ReactComponent as ProfilePic } from '../images/default-profile-pic.svg'
 import sharedndLogo from '../images/sharednd-logo-2.png'
 import './NavBar.css'
 import Dropdown from './Dropdown';
-import SearchBar from './SearchBar';
 
 const NavBar = () => {
   const sessionUser = useSelector(state => state.session.user)
@@ -26,14 +25,11 @@ const NavBar = () => {
           <img className='logo-text' src={sharedndLogo} />
         </NavLink>
       </div>
-      <div>
-        <SearchBar />
-      </div>
       <div className='navbar-right'>
         <div>
           <button className='dropdown-button' onClick={() => handleClick()}>
             <DropdownDash />
-            <ProfilePic />
+            <ProfilePic/>
           </button>
           {dropdown && <Dropdown sessionUser={sessionUser} />}
         </div>
