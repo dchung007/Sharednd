@@ -16,7 +16,7 @@ const NavBar = () => {
   const handleClick = () => {
     setDropdown(!dropdown)
   }
-
+ 
   return (
     <nav className="navbar-container">
       <div className='full-logo'>
